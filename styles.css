@@ -200,3 +200,11 @@ a.button {
   margin-top: 8px;
   min-height: 20px;
 }
+
+@media (max-width: 480px) {
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+}
