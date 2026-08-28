@@ -208,3 +208,9 @@ a.button {
     gap: 12px;
   }
 }
+
+.whatsapp, .youtube {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
