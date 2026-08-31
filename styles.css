@@ -99,39 +99,39 @@ textarea::placeholder {
 }
 
 .direccion {
-    color: #94a3b8;
-    margin-bottom: 20px;
+  color: #94a3b8;
+  margin-bottom: 20px;
 }
 
 .mapa {
-    width: 100%;
-    max-width: 600px;
-    height: 350px;
-    border: none;
-    border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  height: 350px;
+  border: none;
+  border-radius: 12px;
 }
 
 .footer {
-    padding: 40px 20px;
-    border-top: 1px solid #334155;
-    margin-top: 40px;
+  padding: 40px 20px;
+  border-top: 1px solid #334155;
+  margin-top: 40px;
 }
 
 .whatsapp {
-    display: inline-block;
-    background-color: #25D366;
-    color: #0f172a;
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-weight: 600;
-    margin: 16px 0;
+  display: inline-block;
+  background-color: #25d366;
+  color: #0f172a;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin: 16px 0;
 }
 
 .copy {
-    color: #94a3b8;
-    font-size: 0.9rem;
-    margin-top: 16px;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-top: 16px;
 }
 
 @media (max-width: 480px) {
@@ -157,14 +157,14 @@ input[type="text"]::placeholder {
 }
 
 .youtube {
-    display: inline-block;
-    background-color: #FF0000;
-    color: #f8fafc;
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-weight: 600;
-    margin-top: 16px;
+  display: inline-block;
+  background-color: #ff0000;
+  color: #f8fafc;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 16px;
 }
 a.button {
   text-decoration: none;
@@ -209,7 +209,8 @@ a.button {
   }
 }
 
-.whatsapp, .youtube {
+.whatsapp,
+.youtube {
   display: inline-flex;
   align-items: center;
   gap: 8px;
