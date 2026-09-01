@@ -41,7 +41,7 @@ function buscar() {
   } else if (
     texto.includes("confesion") ||
     texto.includes("confesión") ||
-    texto.includes("fe")
+    texto.includes("fe") ||
     texto.includes("doctrina") ||
     texto.includes("creencias") ||
     texto.includes("creencia")
