@@ -156,15 +156,26 @@ input[type="text"]::placeholder {
   color: #94a3b8;
 }
 
+/* Homogeneizar botones de YouTube en tarjetas */
 .youtube {
-  display: inline-block;
-  background-color: #ff0000;
-  color: #f8fafc;
+  background-color: #dc2626;
+  color: #ffffff;
   text-decoration: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  margin-top: 16px;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.youtube:hover {
+  background-color: #b91c1c;
+}
+
+/* Espaciado para contenedores de texto en páginas secundarias */
+.pagina-contenedor {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 a.button {
   text-decoration: none;
@@ -214,4 +225,18 @@ a.button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+}
+
+.texto-parrafo {
+  color: #f8fafc;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero-titulo {
+  color: #f8fafc;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 30px 0 20px 0;
 }
