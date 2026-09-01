@@ -26,6 +26,27 @@ function buscar() {
     texto.includes("evento")
   ) {
     window.location.href = "actividades.html";
+  } else if (
+    texto.includes("alabanza") ||
+    texto.includes("adoracion") ||
+    texto.includes("adoración") ||
+    texto.includes("canto") ||
+    texto.includes("musica") ||
+    texto.includes("música") ||
+    texto.includes("himno") ||
+    texto.includes("cancion") ||
+    texto.includes("canción")
+  ) {
+    window.location.href = "alabanzas.html";
+  } else if (
+    texto.includes("confesion") ||
+    texto.includes("confesión") ||
+    texto.includes("fe")
+    texto.includes("doctrina") ||
+    texto.includes("creencias") ||
+    texto.includes("creencia")
+  ) {
+    window.location.href = "confesion_de_fe.html";
   } else {
     document.getElementById("mensajeBusqueda").textContent =
       "No encontramos esa sección. Intenta con 'horarios' o 'ubicación'.";
