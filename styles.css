@@ -171,12 +171,6 @@ input[type="text"]::placeholder {
   background-color: #b91c1c;
 }
 
-/* Espaciado para contenedores de texto en páginas secundarias */
-.pagina-contenedor {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
 a.button {
   text-decoration: none;
   display: inline-block;
@@ -239,4 +233,30 @@ a.button {
   font-size: 2rem;
   font-weight: 700;
   margin: 30px 0 20px 0;
+}
+
+/* Espaciado para contenedores de texto en páginas secundarias */
+.pagina-contenedor {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Agrega en styles.css */
+.buscador-contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.buscador-contenedor .button {
+  margin: 0; /* Remueve el margen por defecto del botón */
+}
+
+.nav a.active {
+  color: #facc15;
+  font-weight: 700;
+  border-bottom: 2px solid #facc15;
 }
