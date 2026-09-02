@@ -41,45 +41,60 @@
       </nav>
     </header>
 
-    <h2 class="hero-titulo">Actividades y eventos de la Iglesia Elim</h2>
-    <section class="section">
-      <div class="cards">
-        <div class="card">
-          <h3>Actividades especiales</h3>
-          <p>Próximos eventos</p>
-        </div>
-        <div class="card">
-          <h3>Culto de Jóvenes</h3>
-          <p class="hora">Último sábado del mes, 2:00 PM</p>
-          <p class="texto-parrafo">Actividad especial de jóvenes</p>
-        </div>
+    <div class="pagina-contenedor">
+      <h2 class="hero-titulo">Actividades y eventos de la Iglesia Elim</h2>
+
+      <div class="buscador-contenedor">
+        <input
+          type="text"
+          id="input-busqueda"
+          placeholder="Buscar en el sitio..."
+        />
+        <button class="button" id="btn-buscar">Buscar</button>
       </div>
-    </section>
-    <section id="predicas" class="section">
-      <h2 class="section-titulo">Prédicas</h2>
-      <p class="direccion">
-        No te pierdas de las transmisiones en nuestro canal de YouTube
-      </p>
-      <a
-        href="https://www.youtube.com/@iglesiaelimjesucristoteama"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="youtube"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="20"
-          height="20"
-          fill="currentColor"
+      <div id="mensaje-error" class="mensaje-error"></div>
+
+      <section class="section">
+        <div class="cards">
+          <div class="card">
+            <h3>Actividades especiales</h3>
+            <p>Próximos eventos</p>
+          </div>
+          <div class="card">
+            <h3>Culto de Jóvenes</h3>
+            <p class="hora">Último sábado del mes, 2:00 PM</p>
+            <p class="texto-parrafo">Actividad especial de jóvenes</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="predicas" class="section">
+        <h2 class="section-titulo">Prédicas</h2>
+        <p class="direccion">
+          No te pierdas de las transmisiones en nuestro canal de YouTube
+        </p>
+        <a
+          href="https://www.youtube.com/@iglesiaelimjesucristoteama"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="youtube"
         >
-          <path
-            d="M23.498 6.186a2.994 2.994 0 00-2.107-2.117C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.391.569A2.994 2.994 0 00.502 6.186 31.26 31.26 0 000 12a31.26 31.26 0 00.502 5.814 2.994 2.994 0 002.107 2.117C4.495 20.5 12 20.5 12 20.5s7.505 0 9.391-.569a2.994 2.994 0 002.107-2.117A31.26 31.26 0 0024 12a31.26 31.26 0 00-.502-5.814zM9.75 15.568V8.432L15.818 12 9.75 15.568z"
-          />
-        </svg>
-        Ver canal de YouTube
-      </a>
-    </section>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="currentColor"
+          >
+            <path
+              d="M23.498 6.186a2.994 2.994 0 00-2.107-2.117C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.391.569A2.994 2.994 0 00.502 6.186 31.26 31.26 0 000 12a31.26 31.26 0 00.502 5.814 2.994 2.994 0 002.107 2.117C4.495 20.5 12 20.5 12 20.5s7.505 0 9.391-.569a2.994 2.994 0 002.107-2.117A31.26 31.26 0 0024 12a31.26 31.26 0 00-.502-5.814zM9.75 15.568V8.432L15.818 12 9.75 15.568z"
+            />
+          </svg>
+          Ver canal de YouTube
+        </a>
+      </section>
+    </div>
+
     <footer class="footer">
       <p>Iglesia Elim Jesucristo Te Ama</p>
       <a
@@ -106,5 +121,7 @@
       </a>
       <p class="copy">&copy; 2026 Iglesia Elim</p>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
