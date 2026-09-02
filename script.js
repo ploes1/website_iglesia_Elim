@@ -1,27 +1,63 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const buscadorInput = document.getElementById("buscador");
+
+  if (buscadorInput) {
+    buscadorInput.addEventListener("keydown", (evento) => {
+      if (evento.key === "Enter") {
+        evento.preventDefault();
+        buscar();
+      }
+    });
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      const targetId = this.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        e.preventDefault();
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+});
+
 function buscar() {
-  const texto = document.getElementById("buscador").value.toLowerCase();
-  document.getElementById("mensajeBusqueda").textContent = "";
+  const input = document.getElementById("buscador");
+  const mensaje = document.getElementById("mensajeBusqueda");
+
+  if (!input) return;
+
+  const texto = input.value
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+
+  if (mensaje) mensaje.textContent = "";
+
+  if (texto === "") return;
+
   if (texto.includes("horario")) {
-    document.getElementById("horarios").scrollIntoView({ behavior: "smooth" });
+    document.getElementById("horarios")?.scrollIntoView({ behavior: "smooth" });
   } else if (
     texto.includes("ubicacion") ||
-    texto.includes("ubicación") ||
     texto.includes("mapa") ||
     texto.includes("lugar")
   ) {
-    document.getElementById("ubicacion").scrollIntoView({ behavior: "smooth" });
+    document
+      .getElementById("ubicacion")
+      ?.scrollIntoView({ behavior: "smooth" });
   } else if (
     texto.includes("predica") ||
-    texto.includes("prédica") ||
     texto.includes("youtube") ||
     texto.includes("video") ||
-    texto.includes("transmision") ||
-    texto.includes("transmisión")
+    texto.includes("transmision")
   ) {
-    document.getElementById("predicas").scrollIntoView({ behavior: "smooth" });
+    document.getElementById("predicas")?.scrollIntoView({ behavior: "smooth" });
   } else if (
-    texto.includes("jovenes") ||
-    texto.includes("jóvenes") ||
+    texto.includes("joven") ||
     texto.includes("actividad") ||
     texto.includes("evento")
   ) {
@@ -29,34 +65,21 @@ function buscar() {
   } else if (
     texto.includes("alabanza") ||
     texto.includes("adoracion") ||
-    texto.includes("adoración") ||
     texto.includes("canto") ||
     texto.includes("musica") ||
-    texto.includes("música") ||
     texto.includes("himno") ||
-    texto.includes("cancion") ||
-    texto.includes("canción")
+    texto.includes("cancion")
   ) {
     window.location.href = "alabanzas.html";
   } else if (
     texto.includes("confesion") ||
-    texto.includes("confesión") ||
     texto.includes("fe") ||
     texto.includes("doctrina") ||
-    texto.includes("creencias") ||
     texto.includes("creencia")
   ) {
     window.location.href = "confesion_de_fe.html";
-  } else {
-    document.getElementById("mensajeBusqueda").textContent =
+  } else if (mensaje) {
+    mensaje.textContent =
       "No encontramos esa sección. Intenta con 'horarios' o 'ubicación'.";
   }
 }
-
-document
-  .getElementById("buscador")
-  .addEventListener("keydown", function (evento) {
-    if (evento.key === "Enter") {
-      buscar();
-    }
-  });
