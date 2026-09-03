@@ -177,11 +177,23 @@ const renderAlabanzas = (lista = alabanzas) => {
 };
 
 // 3. Inicialización y evento del buscador
+function obtenerYouTubeId(url) {
+  if (!url) return null;
+  const match = url.match(
+    /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/,
+  );
+  return match ? match[1] : null;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   renderAlabanzas();
 
   const formBuscador = document.getElementById("form-buscador");
   const inputBuscador = document.getElementById("buscador");
+  const modal = document.getElementById("modal-reproductor");
+  const iframe = document.getElementById("youtube-iframe");
+  const btnCerrar = document.getElementById("cerrar-modal");
+  const enlaceDirecto = document.getElementById("enlace-directo-yt");
 
   const ejecutarBusqueda = () => {
     const termino = inputBuscador.value.toLowerCase().trim();
@@ -193,14 +205,43 @@ document.addEventListener("DOMContentLoaded", () => {
     renderAlabanzas(filtradas);
   };
 
-  if (inputBuscador) {
-    inputBuscador.addEventListener("input", ejecutarBusqueda);
-  }
-
+  if (inputBuscador) inputBuscador.addEventListener("input", ejecutarBusqueda);
   if (formBuscador) {
     formBuscador.addEventListener("submit", (e) => {
       e.preventDefault();
       ejecutarBusqueda();
+    });
+  }
+
+  // Intercepta el clic en los botones de las tarjetas
+  const contenedor = document.getElementById("contenedor-alabanzas");
+  if (contenedor) {
+    contenedor.addEventListener("click", (e) => {
+      const enlace = e.target.closest("a.youtube");
+      // Si el usuario hace clic normal sin apretar Ctrl/Cmd
+      if (enlace && !e.ctrlKey && !e.metaKey && modal && iframe) {
+        const videoId = obtenerYouTubeId(enlace.href);
+        if (videoId) {
+          e.preventDefault();
+          iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+          if (enlaceDirecto) enlaceDirecto.href = enlace.href;
+          modal.classList.add("activo");
+        }
+      }
+    });
+  }
+
+  const cerrarModal = () => {
+    if (modal && iframe) {
+      modal.classList.remove("activo");
+      iframe.src = "";
+    }
+  };
+
+  if (btnCerrar) btnCerrar.addEventListener("click", cerrarModal);
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) cerrarModal();
     });
   }
 });

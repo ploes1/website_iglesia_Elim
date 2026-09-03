@@ -111,5 +111,31 @@
       <p class="copy">&copy; 2026 Iglesia Elim</p>
     </footer>
     <script src="alabanzas.js"></script>
+    <!-- Modal Reproductor -->
+    <div id="modal-reproductor" class="modal">
+      <div class="modal-contenido">
+        <button id="cerrar-modal" class="cerrar-btn">&times;</button>
+        <div class="video-contenedor">
+          <iframe
+            id="youtube-iframe"
+            src=""
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div style="margin-top: 15px; text-align: center">
+          <a
+            id="enlace-directo-yt"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="youtube"
+          >
+            Ver directamente en YouTube
+          </a>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
