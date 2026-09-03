@@ -19,6 +19,66 @@
     />
     <link rel="icon" type="image/png" href="logo_iglesia_Elim2.png" />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Estilos complementarios para la lista de doctrinas */
+      .doctrinas-contenedor {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        text-align: left;
+      }
+      .doctrina-item {
+        background-color: #1e293b;
+        border: 1px solid #334155;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .doctrina-item summary {
+        padding: 16px 20px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: #facc15;
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .doctrina-item summary::-webkit-details-marker {
+        display: none;
+      }
+      .doctrina-item summary::after {
+        content: "►";
+        font-size: 0.8rem;
+        transition: transform 0.2s ease;
+      }
+      .doctrina-item[open] summary::after {
+        transform: rotate(90deg);
+      }
+      .doctrina-contenido {
+        padding: 20px;
+        border-top: 1px solid #334155;
+        color: #f8fafc;
+        line-height: 1.6;
+      }
+      .doctrina-contenido h3 {
+        color: #facc15;
+        margin: 16px 0 8px 0;
+      }
+      .doctrina-contenido ul {
+        margin-left: 20px;
+        margin-bottom: 12px;
+      }
+      .versiculo-box {
+        background-color: #0f172a;
+        border-left: 4px solid #facc15;
+        padding: 10px 14px;
+        margin: 10px 0;
+        font-style: italic;
+      }
+    </style>
   </head>
   <body class="cuerpo">
     <header class="header">
@@ -40,32 +100,208 @@
         <a href="confesion_de_fe.html" class="active">Confesión de Fe</a>
       </nav>
     </header>
+
     <h2 class="hero-titulo">Doctrinas de la Iglesia Elim</h2>
-    <section id="nuestro-canal" class="section">
-      <h2 class="section-titulo">Nuestro Canal</h2>
-      <p class="direccion">
-        No te pierdas de las transmisiones en nuestro canal de YouTube
-      </p>
-      <a
-        href="https://www.youtube.com/@iglesiaelimjesucristoteama"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="youtube"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="20"
-          height="20"
-          fill="currentColor"
-        >
-          <path
-            d="M23.498 6.186a2.994 2.994 0 00-2.107-2.117C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.391.569A2.994 2.994 0 00.502 6.186 31.26 31.26 0 000 12a31.26 31.26 0 00.502 5.814 2.994 2.994 0 002.107 2.117C4.495 20.5 12 20.5 12 20.5s7.505 0 9.391-.569a2.994 2.994 0 002.107-2.117A31.26 31.26 0 0024 12a31.26 31.26 0 00-.502-5.814zM9.75 15.568V8.432L15.818 12 9.75 15.568z"
-          />
-        </svg>
-        Ver canal de YouTube
-      </a>
-    </section>
+
+    <main class="pagina-contenedor">
+      <div class="doctrinas-contenedor">
+        <!-- Doctrina 01 -->
+        <details class="doctrina-item" open>
+          <summary>01. La Inspiración de las Escrituras</summary>
+          <div class="doctrina-contenido">
+            <p><strong>2 Timoteo 3:16-17</strong></p>
+            <p>
+              La Biblia es enteramente la Palabra de Dios, aunque haya sido
+              escrita por hombres. Existen múltiples evidencias que así lo
+              demuestran. Estas evidencias pueden ser clasificadas en internas y
+              externas. Se le llama « La Biblia », de la palabra griega
+              <em>biblos</em>, que significa «Libro».
+            </p>
+
+            <h3>I. Evidencias Internas</h3>
+            <p>
+              Son aquellas que están contenidas dentro de la misma Biblia; es
+              decir, declaraciones escriturales donde la Biblia afirma ser la
+              palabra de Dios:
+            </p>
+            <div class="versiculo-box">
+              <strong>Salmos 19:7-11:</strong> "La ley de Jehová es perfecta,
+              que convierte el alma; El testimonio de Jehová es fiel, que hace
+              sabio al sencillo. Los mandamientos de Jehová son rectos, que
+              alegran el corazón; El precepto de Jehová es puro, que alumbra los
+              ojos. El temor de Jehová es limpio, que permanece para siempre;
+              Los juicios de Jehová son verdad, todos justos. Deseables son más
+              que el oro, y más que mucho oro afinado; Y dulces más que miel, y
+              que la que destila del panal. Tu siervo es además amonestado con
+              ellos; En guardarlos hay grande galardón."
+            </div>
+            <div class="versiculo-box">
+              <strong>Salmos 119:104-105:</strong> "De tus mandamientos he
+              adquirido inteligencia; Por tanto, he aborrecido todo camino de
+              mentira. Nun Lámpara es a mis pies tu palabra, Y lumbrera a mi
+              camino."
+            </div>
+            <div class="versiculo-box">
+              <strong>1 Tesalonicenses 2:13:</strong> "Por lo cual también
+              nosotros sin cesar damos gracias a Dios, de que cuando recibisteis
+              la palabra de Dios que oísteis de nosotros, la recibisteis no como
+              palabra de hombres, sino según es en verdad, la palabra de Dios,
+              la cual actúa en vosotros los creyentes."
+            </div>
+
+            <h3>II. Evidencias Externas</h3>
+            <ol class="lista-evidencias">
+              <li>
+                <p>
+                  <strong>SU CONTINUIDAD:</strong> es un libro que muestra una
+                  continuidad
+                  <strong>histórica, doctrinal y revelacional</strong>. El hecho
+                  de que los escritores humanos de la Biblia no se hayan
+                  conocido y, muchas veces, tampoco se leyeron entre sí, resalta
+                  la verdad de que la unidad de la Biblia únicamente puede ser
+                  explicada como un milagro que la coloca en la categoría de
+                  Palabra de Dios.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>SU EXTENSIÓN:</strong> La Biblia es un libro que no
+                  solamente habla de asuntos espirituales. Ella se extiende para
+                  tocar los temas científicos, históricos, geográficos,
+                  culturales, sociales, sanitarios, psicológicos. Pero aunque la
+                  extensión del contenido de la Biblia es tan amplio, resulta un
+                  verdadero milagro que todas y cada una de sus afirmaciones, en
+                  cualquiera de esos campos,
+                  <strong>son siempre exactas y sin error.</strong>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>SUS PROFECÍAS:</strong> El cumplimiento en la historia
+                  de las diferentes profecías bíblicas es una de las evidencias
+                  más convincentes de su origen divino. En la Biblia se
+                  encuentran profecías como:
+                </p>
+                <ol type="a" class="sublista-letras">
+                  <li>La sucesión de los grandes imperios mundiales,</li>
+                  <li>
+                    Se anuncia por completo la llegada de grandes conquistadores
+                    como Ciro,
+                  </li>
+                  <li>
+                    Se profetiza con siglos de antelación la fecha exacta de la
+                    venida del Mesías, se profetiza el lugar y la forma de su
+                    nacimiento, su carácter, sus milagros, sus palabras, la
+                    forma de su muerte, su sepultura, su resurrección.
+                  </li>
+                </ol>
+                <p class="espacio-arriba">
+                  En fin, la mayor parte de la Biblia es profecía y la mayor
+                  parte de ella se ha cumplido al pie de la letra, la otra parte
+                  se está cumpliendo en el presente y la parte final se cumplirá
+                  próximamente conforme al orden que ella misma establece. El
+                  hecho de que las diferentes predicciones de la Biblia se hayan
+                  cumplido con absoluta exactitud es prueba de su origen
+                  sobrenatural.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>SU ACEPTACIÓN:</strong> Aunque no han faltado los
+                  detractores de la Biblia, lo cierto es que ella sigue siendo
+                  el libro de mayor popularidad jamás escrito.
+                </p>
+                <ol type="a" class="sublista-letras">
+                  <li>
+                    Es el libro que se ha traducido a mayor número de idiomas
+                    que ningún otro.
+                  </li>
+                  <li>
+                    Cada año, desde que se inventó la imprenta, ha conquistado
+                    el primer lugar en número de ejemplares impresos y
+                    distribuidos.
+                  </li>
+                  <li>
+                    Su aceptación es universal, la leen los niños, los jóvenes,
+                    los adultos y los ancianos.
+                  </li>
+                  <li>
+                    Ha sido inspiración de escritores, oradores, políticos,
+                    artistas, etc.
+                  </li>
+                  <li>
+                    Es el libro sobre el que el mayor número de comentarios se
+                    han escrito.
+                  </li>
+                </ol>
+                <p class="espacio-arriba">
+                  Millares de eruditos se han dedicado a su estudio, sin agotar,
+                  después de siglos, sus enseñanzas y verdades. Este fenómeno
+                  literario sin igual, es otra prueba de su origen divino.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>SU PODER:</strong>
+                  <strong
+                    >La Biblia es el libro que más vidas ha cambiado.</strong
+                  >
+                </p>
+                <ol type="a" class="sublista-tareas">
+                  <li>
+                    Ella transforma el carácter de los hombres y de los hogares,
+                  </li>
+                  <li>
+                    Su lectura puede librar de los vicios, de las enfermedades,
+                    del pecado y de la desesperanza.
+                  </li>
+                  <li>Su lectura anima, reprende, consuela, corrige.</li>
+                  <li>Quien la lee no vuelve a ser el mismo.</li>
+                </ol>
+                <p class="espacio-arriba">
+                  Ningún otro libro ha probado tener más poder para mover el
+                  corazón humano que la Biblia.
+                </p>
+              </li>
+            </ol>
+
+            <h3>DEFINICIÓN DE INSPIRACIÓN</h3>
+            <p>
+              Verdad impartida directamente por Dios a sus autores, guiados por
+              el Espíritu Santo sin anular su individualidad ni estilo literario
+              (2 Pedro 1:21).
+            </p>
+
+            <h3>CARACTERÍSTICAS DE LA INSPIRACIÓN</h3>
+            <ol class="lista-evidencias">
+              <li>
+                <strong>Verbal:</strong> Dios inspiró las palabras exactas
+                (Mateo 5:18).
+              </li>
+              <li>
+                <strong>Plenaria:</strong> Se extiende por igual a todas y cada
+                una de sus partes (2 Timoteo 3:16).
+              </li>
+              <li>
+                <strong>Infalible:</strong> No contiene ningún error al expresar
+                el pensamiento del Dios perfecto.
+              </li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Doctrina 02 -->
+        <details class="doctrina-item">
+          <summary>02. Nombre de la Doctrina 2</summary>
+          <div class="doctrina-contenido">
+            <p>Contenido de la doctrina 2 aquí...</p>
+          </div>
+        </details>
+
+        <!-- Repetir estructura para las doctrinas 03 a 37 -->
+      </div>
+    </main>
+
     <footer class="footer">
       <p>Iglesia Elim Jesucristo Te Ama</p>
       <a

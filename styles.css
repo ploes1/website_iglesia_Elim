@@ -382,3 +382,101 @@ a.button {
   width: 100%;
   height: 100%;
 }
+
+/* Estilos para el desglose de doctrinas */
+.doctrinas-contenedor {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.doctrina-item {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.doctrina-item summary {
+  padding: 16px 20px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #facc15;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.doctrina-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.doctrina-item summary::after {
+  content: "►";
+  font-size: 0.8rem;
+  transition: transform 0.2s ease;
+}
+
+.doctrina-item[open] summary::after {
+  transform: rotate(90deg);
+}
+
+.doctrina-contenido {
+  padding: 20px;
+  border-top: 1px solid #334155;
+  color: #f8fafc;
+  line-height: 1.6;
+}
+
+.doctrina-contenido h3 {
+  color: #facc15;
+  margin: 16px 0 8px 0;
+}
+
+.doctrina-contenido ul {
+  margin-left: 20px;
+  margin-bottom: 12px;
+}
+
+/* Caja destacada para pasajes bíblicos */
+.versiculo-box {
+  background-color: #0f172a;
+  border-left: 4px solid #facc15;
+  padding: 12px 16px;
+  margin: 12px 0;
+  font-style: italic;
+  border-radius: 0 6px 6px 0;
+}
+
+.espacio-arriba {
+  margin-top: 16px; /* Ajusta los píxeles según el espacio que desees */
+}
+
+/* Espaciado de la lista principal */
+.lista-evidencias > li {
+  margin-bottom: 20px; /* Separa los puntos 2, 3, 4 entre sí */
+  line-height: 1.6;
+}
+
+/* Sangría e interlineado para las sublistas (a, b, c...) */
+.lista-evidencias ol.sublista-letras,
+.lista-evidencias ol.sublista-tareas {
+  margin-left: 24px; /* Empuja las letras a la derecha */
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.lista-evidencias ol.sublista-letras li,
+.lista-evidencias ol.sublista-tareas li {
+  margin-bottom: 6px; /* Separación entre a., b., c. */
+}
+
+/* Párrafos de cierre/conclusión dentro de un punto */
+.lista-evidencias li > p:not(:first-child) {
+  margin-top: 12px;
+}
