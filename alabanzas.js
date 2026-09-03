@@ -21,7 +21,7 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=ZklsuEw8OOg",
   },
   {
-    titulo: "Creo en Ti (Version)",
+    titulo: "Creo en Ti (Versión)",
     artista: "Julio Melgar & Marcela Gándara",
     url: "https://www.youtube.com/watch?v=8j069qJnAwM",
   },
