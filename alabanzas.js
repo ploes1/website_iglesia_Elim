@@ -86,8 +86,8 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=XNMfQuoIs6w",
   },
   {
-    titulo: "Gracias Cristo",
-    artista: "Generación de Jesús (Versión)",
+    titulo: "Gracias Cristo (Versión)",
+    artista: "Generación de Jesús",
     url: "https://www.youtube.com/watch?v=4QAJiLkf0I4",
   },
   {
