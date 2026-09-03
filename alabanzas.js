@@ -148,14 +148,19 @@ const alabanzas = [
 ];
 
 // 2. Función para renderizar las tarjetas en el HTML
-const renderAlabanzas = () => {
+const renderAlabanzas = (lista = alabanzas) => {
   const contenedor = document.getElementById("contenedor-alabanzas");
   const svgYouTube = `
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
       <path d="M23.498 6.186a2.994 2.994 0 00-2.107-2.117C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.391.569A2.994 2.994 0 00.502 6.186 31.26 31.26 0 000 12a31.26 31.26 0 00.502 5.814 2.994 2.994 0 002.107 2.117C4.495 20.5 12 20.5 12 20.5s7.505 0 9.391-.569a2.994 2.994 0 002.107-2.117A31.26 31.26 0 0024 12a31.26 31.26 0 00-.502-5.814zM9.75 15.568V8.432L15.818 12 9.75 15.568z"/>
     </svg>`;
 
-  contenedor.innerHTML = alabanzas
+  if (lista.length === 0) {
+    contenedor.innerHTML = `<p class="texto-parrafo">No se encontraron alabanzas.</p>`;
+    return;
+  }
+
+  contenedor.innerHTML = lista
     .map(
       (item) => `
     <div class="card">
@@ -171,5 +176,31 @@ const renderAlabanzas = () => {
     .join("");
 };
 
-// 3. Ejecutar al cargar la página
-document.addEventListener("DOMContentLoaded", renderAlabanzas);
+// 3. Inicialización y evento del buscador
+document.addEventListener("DOMContentLoaded", () => {
+  renderAlabanzas();
+
+  const formBuscador = document.getElementById("form-buscador");
+  const inputBuscador = document.getElementById("buscador");
+
+  const ejecutarBusqueda = () => {
+    const termino = inputBuscador.value.toLowerCase().trim();
+    const filtradas = alabanzas.filter(
+      (item) =>
+        item.titulo.toLowerCase().includes(termino) ||
+        item.artista.toLowerCase().includes(termino),
+    );
+    renderAlabanzas(filtradas);
+  };
+
+  if (inputBuscador) {
+    inputBuscador.addEventListener("input", ejecutarBusqueda);
+  }
+
+  if (formBuscador) {
+    formBuscador.addEventListener("submit", (e) => {
+      e.preventDefault();
+      ejecutarBusqueda();
+    });
+  }
+});

@@ -262,15 +262,53 @@ a.button {
   }
 
   .buscador-contenedor {
-    flex-direction: column;
-    gap: 12px;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto 30px;
+    padding: 0 20px;
     width: 100%;
   }
 
-  .buscador-contenedor input[type="text"],
-  .buscador-contenedor .button {
+  #form-buscador {
+    display: flex;
+    gap: 10px;
     width: 100%;
-    max-width: 100%;
+    max-width: 500px;
+  }
+
+  #buscador {
+    flex: 1;
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    background-color: #1e293b;
+    color: #f8fafc;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  #buscador::placeholder {
+    color: #94a3b8;
+  }
+
+  #buscador:focus {
+    border-color: #facc15;
+  }
+
+  #form-buscador .button {
+    padding: 12px 20px;
+    background-color: #facc15;
+    color: #0f172a;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  #form-buscador .button:hover {
+    background-color: #eab308;
   }
 }
 
