@@ -478,6 +478,10 @@ a.button {
 .lista-evidencias ol.sublista-tareas li {
   margin-bottom: 6px; /* Separación entre a., b., c. */
 }
+/* Sangría para alinear listas principales con la posición de sublistas */
+.lista-evidencias.con-sangria {
+  margin-left: 24px;
+}
 
 /* Párrafos de cierre/conclusión dentro de un punto */
 .lista-evidencias li > p:not(:first-child) {
