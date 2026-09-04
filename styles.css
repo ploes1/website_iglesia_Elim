@@ -480,3 +480,8 @@ a.button {
 .lista-evidencias li > p:not(:first-child) {
   margin-top: 12px;
 }
+/* Hereda el mismo margen que una lista anidada en segundo nivel */
+.sublista-independiente {
+  list-style-type: lower-alpha;
+  padding-left: 2.5rem; /* O el valor equivalente definido en .lista-evidencias */
+}
