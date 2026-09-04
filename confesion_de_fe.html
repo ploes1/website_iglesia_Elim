@@ -102,7 +102,14 @@
     </header>
 
     <h2 class="hero-titulo">Doctrinas de la Iglesia Elim</h2>
-
+    <!-- Buscador en tiempo real -->
+    <div class="buscador-contenedor">
+      <input
+        type="text"
+        id="buscador-doctrinas"
+        placeholder="Buscar doctrina (ej. Trinidad, Escrituras)..."
+      />
+    </div>
     <main class="pagina-contenedor">
       <div class="doctrinas-contenedor">
         <!-- Doctrina 01 -->
@@ -658,5 +665,39 @@
       </a>
       <p class="copy">&copy; 2026 Iglesia Elim</p>
     </footer>
+    <script>
+      const inputBuscador = document.getElementById("buscador-doctrinas");
+      const doctrinas = document.querySelectorAll(".doctrina-item");
+
+      inputBuscador.addEventListener("input", (e) => {
+        const busqueda = e.target.value
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .trim();
+
+        doctrinas.forEach((item) => {
+          const texto = item.textContent
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+
+          if (texto.includes(busqueda)) {
+            item.style.display = "";
+            // Si el usuario escribe algo concreto, abre la doctrina para ver el resultado
+            if (busqueda.length > 2) {
+              item.open = true;
+            }
+          } else {
+            item.style.display = "none";
+          }
+        });
+
+        // Si borra la búsqueda, vuelve a cerrar las doctrinas
+        if (busqueda === "") {
+          doctrinas.forEach((item) => (item.open = false));
+        }
+      });
+    </script>
   </body>
 </html>

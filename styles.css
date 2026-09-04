@@ -410,8 +410,11 @@ a.button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: background-color 0.2s ease;
 }
-
+.doctrina-item summary:hover {
+  background-color: #26354a;
+}
 .doctrina-item summary::-webkit-details-marker {
   display: none;
 }
