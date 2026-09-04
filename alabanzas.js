@@ -111,9 +111,24 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=J1XnzpLqbG8",
   },
   {
+    titulo: "Libre",
+    artista: "Juan Carlos Alvarado",
+    url: "https://www.youtube.com/watch?v=vqUwfgDyV6w",
+  },
+  {
     titulo: "Muévete En Mí (Versión)",
     artista: "Medley Propósito ft. Bryan Matos & April Grace Jaspe",
     url: "https://www.youtube.com/watch?v=bgJmmo1uV-I",
+  },
+  {
+    titulo: "Demos Gracias al Señor (Versión)",
+    artista: "Matías Ramos",
+    url: "https://www.youtube.com/watch?v=CKMWHGFqHhE",
+  },
+  {
+    titulo: "Canta Aleluya (Versión)",
+    artista: "Maranatha! Latin",
+    url: "https://www.youtube.com/watch?v=7jzInKNHOFo",
   },
   {
     titulo: "La Visión De La Cruz",
@@ -121,9 +136,24 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=Rs-KfHvuHc8",
   },
   {
+    titulo: "Mi alma volará (Versión)",
+    artista: "Jared y Matías",
+    url: "https://www.youtube.com/watch?v=7GmfAsb5YKY",
+  },
+  {
+    titulo: "Seguro Que Vendrá",
+    artista: "Harry Maldonado",
+    url: "https://www.youtube.com/watch?v=mVXfHb8nRLQ",
+  },
+  {
     titulo: "Maravilloso es el Señor Jesús (Versión)",
     artista: "Dominio público",
     url: "https://www.youtube.com/watch?v=J1yEsnCWvrE",
+  },
+  {
+    titulo: "Qué bueno es el Señor (Versión)",
+    artista: "Dominio público",
+    url: "https://www.youtube.com/watch?v=x2HfLK0Fv54",
   },
   {
     titulo: "Estamos De Fiesta con Jesús (Versión)",
@@ -139,6 +169,21 @@ const alabanzas = [
     titulo: "Si no hubiera sido por el Señor (Versión)",
     artista: "Dominio público",
     url: "https://www.youtube.com/watch?v=eQdw0SB0jOI",
+  },
+  {
+    titulo: "Sin Santidad Nadie Verá al Señor (Versión)",
+    artista: "Dominio público",
+    url: "https://www.youtube.com/watch?v=m-iD4MWwoYE",
+  },
+  {
+    titulo: "No hay Dios tan grande como Tú (Versión)",
+    artista: "Dominio público",
+    url: "https://www.youtube.com/watch?v=9xNjDak3iy0",
+  },
+  {
+    titulo: "Este es el Cristo que yo predico (Versión)",
+    artista: "Dominio público",
+    url: "https://www.youtube.com/watch?v=QeepxsoQboQ",
   },
   {
     titulo: "Alabad a Jehová (Versión)",
