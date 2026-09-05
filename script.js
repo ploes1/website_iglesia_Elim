@@ -9,7 +9,46 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+  // Buscador en tiempo real para actividades.html
+  const inputActividades = document.getElementById("input-busqueda");
+  const cardsActividades = document.querySelectorAll(".cards .card");
+  const mensajeError = document.getElementById("mensaje-error");
 
+  if (inputActividades) {
+    inputActividades.addEventListener("input", (e) => {
+      const texto = e.target.value
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
+
+      let coincidencias = 0;
+
+      cardsActividades.forEach((card) => {
+        const contenido = card.textContent
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "");
+
+        if (contenido.includes(texto)) {
+          card.style.display = "";
+          coincidencias++;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      // Mostrar mensaje de aviso si no hay resultados
+      if (mensajeError) {
+        if (coincidencias === 0 && texto !== "") {
+          mensajeError.textContent =
+            "No se encontraron actividades con esa búsqueda.";
+        } else {
+          mensajeError.textContent = "";
+        }
+      }
+    });
+  }
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       const targetId = this.getAttribute("href");
