@@ -17,19 +17,22 @@ body.cuerpo {
 }
 
 /* ============================================================
-   HEADER (Distribución simétrica de extremos)
+   HEADER (Fijo, con fondo opaco y z-index correcto)
    ============================================================ */
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Marca a la izq, Botón a la der */
-  max-width: 1200px;
-  margin: 0 auto 20px auto;
-  padding: 14px 16px;
+  justify-content: space-between;
+  max-width: 100%; /* Ocupa todo el ancho */
+  width: 100%;
+  margin: 0;
+  padding: 14px 24px;
   gap: 16px;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000; /* Pasa SIEMPRE por encima del contenido */
+  background-color: #0f172a; /* Mismo color que el fondo del body para tapar el texto al hacer scroll */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Separación elegante */
 }
 
 .header-brand {
