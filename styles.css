@@ -16,50 +16,286 @@ body.cuerpo {
   padding: 0 20px 40px 20px;
 }
 
-/* Header y Navegación */
+/* ============================================================
+   HEADER (Distribución simétrica de extremos)
+   ============================================================ */
 .header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between; /* Marca a la izq, Botón a la der */
+  max-width: 1200px;
+  margin: 0 auto 20px auto;
+  padding: 14px 16px;
   gap: 16px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
 }
 
 .logo {
-  height: 60px;
-  width: 60px;
+  height: 56px;
+  width: 56px;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .titulo {
-  font-size: 3rem;
+  font-size: 2.2rem;
   color: #facc15;
   letter-spacing: -1px;
 }
 
-.nav {
+/* ============================================================
+   BOTÓN HAMBURGUESA (Proporción exacta masvida.org)
+   ============================================================ */
+.menu-hbtn {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  max-width: 42px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  cursor: pointer;
   display: flex;
-  gap: 20px;
-  margin-left: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4.5px; /* Espaciado entre barras */
+  padding: 10px;
+  flex-shrink: 0;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-sizing: border-box;
 }
 
-.nav a {
+.menu-hbtn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #facc15;
+  transform: scale(1.03);
+}
+
+/* Líneas finas y estilizadas */
+.menu-hbtn .hbtn-line {
+  display: block;
+  height: 1.5px; /* Más fino, delicado y nítido */
+  background-color: #f8fafc;
+  border-radius: 2px;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    width 0.3s ease,
+    background-color 0.25s ease;
+}
+
+/* Barra superior */
+.menu-hbtn .hbtn-line:nth-child(1) {
+  width: 18px;
+}
+
+/* Barra central: más corta (el toque Más Vida) */
+.menu-hbtn .hbtn-line:nth-child(2) {
+  width: 12px;
+}
+
+/* Barra inferior */
+.menu-hbtn .hbtn-line:nth-child(3) {
+  width: 18px;
+}
+
+.menu-hbtn:hover .hbtn-line {
+  background-color: #facc15;
+}
+
+/* Animación precisa a 'X' cuando el menú está abierto */
+.menu-hbtn.abierto .hbtn-line:nth-child(1) {
+  width: 18px;
+  transform: translateY(6px) rotate(45deg);
+  background-color: #facc15;
+}
+
+.menu-hbtn.abierto .hbtn-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.menu-hbtn.abierto .hbtn-line:nth-child(3) {
+  width: 18px;
+  transform: translateY(-6px) rotate(-45deg);
+  background-color: #facc15;
+}
+
+/* Las 3 barras se transforman suavemente en una 'X' al abrir */
+.menu-hbtn.abierto .hbtn-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+  background-color: #facc15;
+}
+
+.menu-hbtn.abierto .hbtn-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.menu-hbtn.abierto .hbtn-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+  background-color: #facc15;
+}
+
+/* ============================================================
+   PANEL LATERAL (DRAWER DERECHO) Y OVERLAY
+   ============================================================ */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+  z-index: 998;
+}
+
+.menu-overlay.activo {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 85vw;
+  background-color: #1e293b;
+  border-left: 1px solid #334155;
+  box-shadow: -10px 0 35px rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  transform: translateX(100%); /* Oculto a la derecha */
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  overflow-y: auto;
+}
+
+.menu-drawer.activo {
+  transform: translateX(0); /* Desliza al frente */
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #334155;
+}
+
+.drawer-titulo {
+  font-size: 1.2rem;
+  color: #facc15;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.drawer-titulo img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.drawer-cerrar {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f8fafc;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.drawer-cerrar:hover {
+  background: #facc15;
+  color: #0f172a;
+}
+
+.drawer-nav {
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-grow: 1;
+}
+
+.drawer-nav a {
   color: #f8fafc;
   text-decoration: none;
+  font-size: 1.05rem;
   font-weight: 500;
+  padding: 12px 18px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.nav a:hover,
-.nav a.active {
+.drawer-nav a:hover {
+  background-color: #26354a;
   color: #facc15;
+  transform: translateX(5px);
 }
 
-.nav a.active {
+.drawer-nav a.active {
+  background-color: rgba(250, 204, 21, 0.15);
+  color: #facc15;
   font-weight: 700;
-  border-bottom: 2px solid #facc15;
+  border-left: 4px solid #facc15;
 }
 
+.drawer-footer {
+  padding: 18px 24px;
+  border-top: 1px solid #334155;
+  background-color: #162032;
+}
+
+.drawer-footer .whatsapp {
+  margin: 0;
+  width: 100%;
+  justify-content: center;
+}
+
+body.menu-abierto {
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .titulo {
+    font-size: 1.5rem;
+  }
+  .logo {
+    height: 46px;
+    width: 46px;
+  }
+}
 /* Hero y Secciones */
 .hero-titulo {
   color: #f8fafc;

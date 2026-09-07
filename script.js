@@ -1,6 +1,54 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const buscadorInput = document.getElementById("buscador");
+  // --- CONTROLADOR DEL MENÚ HAMBURGUESA DERECHO ---
+  const btnMenu = document.getElementById("btn-menu");
+  const drawerCerrar = document.getElementById("drawer-cerrar");
+  const menuDrawer = document.getElementById("menu-drawer");
+  const menuOverlay = document.getElementById("menu-overlay");
 
+  if (btnMenu && menuDrawer && menuOverlay) {
+    const abrirMenu = () => {
+      btnMenu.classList.add("abierto");
+      btnMenu.setAttribute("aria-expanded", "true");
+      menuDrawer.classList.add("activo");
+      menuOverlay.classList.add("activo");
+      document.body.classList.add("menu-abierto");
+    };
+
+    const cerrarMenu = () => {
+      btnMenu.classList.remove("abierto");
+      btnMenu.setAttribute("aria-expanded", "false");
+      menuDrawer.classList.remove("activo");
+      menuOverlay.classList.remove("activo");
+      document.body.classList.remove("menu-abierto");
+    };
+
+    btnMenu.addEventListener("click", () => {
+      const estaAbierto = menuDrawer.classList.contains("activo");
+      if (estaAbierto) {
+        cerrarMenu();
+      } else {
+        abrirMenu();
+      }
+    });
+
+    if (drawerCerrar) drawerCerrar.addEventListener("click", cerrarMenu);
+    menuOverlay.addEventListener("click", cerrarMenu);
+
+    // Cerrar con la tecla Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && menuDrawer.classList.contains("activo")) {
+        cerrarMenu();
+      }
+    });
+
+    // Cerrar al hacer clic en cualquier enlace dentro del menú
+    menuDrawer.querySelectorAll("a").forEach((enlace) => {
+      enlace.addEventListener("click", cerrarMenu);
+    });
+  }
+
+  // --- BUSCADOR PRINCIPAL (index.html) ---
+  const buscadorInput = document.getElementById("buscador");
   if (buscadorInput) {
     buscadorInput.addEventListener("keydown", (evento) => {
       if (evento.key === "Enter") {
@@ -9,7 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-  // Buscador en tiempo real para actividades.html
+
+  // --- BUSCADOR EN TIEMPO REAL (actividades.html) ---
   const inputActividades = document.getElementById("input-busqueda");
   const cardsActividades = document.querySelectorAll(".cards .card");
   const mensajeError = document.getElementById("mensaje-error");
@@ -49,6 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // --- DESPLAZAMIENTO SUAVE PARA ENLACES INTERNOS (#) ---
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       const targetId = this.getAttribute("href");
@@ -62,6 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// --- FUNCIÓN DE BÚSQUEDA GENERAL (Navegación en index.html) ---
 function buscar() {
   const input = document.getElementById("buscador");
   const mensaje = document.getElementById("mensajeBusqueda");
