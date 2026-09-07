@@ -27,6 +27,9 @@ body.cuerpo {
   margin: 0 auto 20px auto;
   padding: 14px 16px;
   gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .header-brand {
