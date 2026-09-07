@@ -121,7 +121,7 @@ body.cuerpo {
   background-color: #facc15;
 }
 
-/* Animación precisa a 'X' cuando el menú está abierto */
+/* Transformación limpia a 'X' centrada y simétrica */
 .menu-hbtn.abierto .hbtn-line:nth-child(1) {
   width: 18px;
   transform: translateY(6px) rotate(45deg);
@@ -136,22 +136,6 @@ body.cuerpo {
 .menu-hbtn.abierto .hbtn-line:nth-child(3) {
   width: 18px;
   transform: translateY(-6px) rotate(-45deg);
-  background-color: #facc15;
-}
-
-/* Las 3 barras se transforman suavemente en una 'X' al abrir */
-.menu-hbtn.abierto .hbtn-line:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-  background-color: #facc15;
-}
-
-.menu-hbtn.abierto .hbtn-line:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0);
-}
-
-.menu-hbtn.abierto .hbtn-line:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
   background-color: #facc15;
 }
 
