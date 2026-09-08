@@ -26,6 +26,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=8j069qJnAwM",
   },
   {
+    titulo: "LA BONDAD DE DIOS (Versión)",
+    artista: "Francheska Morales ft. Miel San Marcos",
+    url: "https://www.youtube.com/watch?v=BTAhWEurzTE",
+  },
+  {
     titulo: "No hay lugar más alto",
     artista: "Miel San Marcos ft. Christine D'Clario",
     url: "https://www.youtube.com/watch?v=UbEUeFC3lh4",
