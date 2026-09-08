@@ -56,6 +56,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=OPXOuKy7ORo",
   },
   {
+    titulo: "No Merecía Tanto Amor",
+    artista: "Jesús Adrián Romero",
+    url: "https://www.youtube.com/watch?v=ZEb7jS7K5z0",
+  },
+  {
     titulo: "En Tu Presencia",
     artista: "Jaime Murrell",
     url: "https://www.youtube.com/watch?v=BE2Slnik1ug",
