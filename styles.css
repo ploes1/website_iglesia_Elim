@@ -95,6 +95,7 @@ body.cuerpo {
   height: 1.5px; /* Más fino, delicado y nítido */
   background-color: #f8fafc;
   border-radius: 2px;
+  transform-origin: center;
   transition:
     transform 0.3s ease,
     opacity 0.3s ease,
@@ -131,6 +132,7 @@ body.cuerpo {
 .menu-hbtn.abierto .hbtn-line:nth-child(2) {
   opacity: 0;
   transform: scaleX(0);
+  position: relative;
 }
 
 .menu-hbtn.abierto .hbtn-line:nth-child(3) {
@@ -476,7 +478,6 @@ a.button {
   }
 
   .header {
-    flex-direction: column;
     gap: 12px;
   }
 
