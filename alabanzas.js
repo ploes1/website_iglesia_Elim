@@ -101,9 +101,19 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=4QAJiLkf0I4",
   },
   {
+    titulo: "Lléname Señor (Versión)",
+    artista: "Marcos Witt",
+    url: "https://www.youtube.com/watch?v=mE7QISK7XXE",
+  },
+  {
     titulo: "Dios está aquí",
     artista: "Javier Gacías Mateo",
     url: "https://www.youtube.com/watch?v=-1lEvbddHD8",
+  },
+  {
+    titulo: "Soy Deudor",
+    artista: "Juan Carlos Alvarado",
+    url: "https://www.youtube.com/watch?v=YdmYaSFwprs",
   },
   {
     titulo: "Yo Sé Que Estás Aquí",
@@ -161,6 +171,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=J1yEsnCWvrE",
   },
   {
+    titulo: "No hay Dios tan grande como Tú (Versión)",
+    artista: "Dominio público",
+    url: "https://www.youtube.com/watch?v=9xNjDak3iy0",
+  },
+  {
     titulo: "Qué bueno es el Señor (Versión)",
     artista: "Dominio público",
     url: "https://www.youtube.com/watch?v=x2HfLK0Fv54",
@@ -186,9 +201,9 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=m-iD4MWwoYE",
   },
   {
-    titulo: "No hay Dios tan grande como Tú (Versión)",
+    titulo: "Me Libertó (Versión)",
     artista: "Dominio público",
-    url: "https://www.youtube.com/watch?v=9xNjDak3iy0",
+    url: "https://www.youtube.com/watch?v=uxX5nENsq7w",
   },
   {
     titulo: "Este es el Cristo que yo predico (Versión)",
