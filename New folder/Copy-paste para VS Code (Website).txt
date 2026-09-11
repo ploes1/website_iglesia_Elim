@@ -1,2 +1,5 @@
 Copy-paste para VS Code (Website)
 <div class="versiculo-box"><strong>:</strong> ""</div>
+<ol type="a" class="lista-evidencias con-sangria espacio-arriba">
+              <li></li><li></li><li></li>
+            </ol>
