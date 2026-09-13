@@ -2,7 +2,7 @@
 const alabanzas = [
   {
     titulo: "Santo por Siempre (Versión)",
-    artista: "Chris Tomlin & Miel San Marcos",
+    artista: "Chris Tomlin ft. Miel San Marcos",
     url: "https://www.youtube.com/watch?v=5wAfWuKWKJw",
   },
   {
@@ -22,7 +22,7 @@ const alabanzas = [
   },
   {
     titulo: "Creo en Ti (Versión)",
-    artista: "Julio Melgar & Marcela Gándara",
+    artista: "Julio Melgar ft. Marcela Gándara",
     url: "https://www.youtube.com/watch?v=8j069qJnAwM",
   },
   {
@@ -74,6 +74,11 @@ const alabanzas = [
     titulo: "Sentado En Su Trono",
     artista: "Jesús Adrián Romero",
     url: "https://www.youtube.com/watch?v=PrNafmJNSmQ",
+  },
+  {
+    titulo: "Quiero Levantar Mis Manos (Versión)",
+    artista: "Marcos Witt ft. Montesanto",
+    url: "https://www.youtube.com/watch?v=tI70aR3lBIY",
   },
   {
     titulo: "Dame De Beber",
