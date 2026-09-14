@@ -46,6 +46,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=L2EqWBfFWXs",
   },
   {
+    titulo: "MI SANADOR",
+    artista: "Miel San Marcos",
+    url: "https://www.youtube.com/watch?v=pPSphmJx7GM",
+  },
+  {
     titulo: "Al Estar Ante Ti",
     artista: "Jesús Adrián Romero",
     url: "https://www.youtube.com/watch?v=TdpfjHeZLCk",
