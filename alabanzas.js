@@ -96,6 +96,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=iM49tkRfJZs",
   },
   {
+    titulo: "Majestuoso Poderoso",
+    artista: "Marcos Witt",
+    url: "https://www.youtube.com/watch?v=JNsrGoMZLq4",
+  },
+  {
     titulo: "El nombre de Jesús",
     artista: "José Ocampo",
     url: "https://www.youtube.com/watch?v=XNMfQuoIs6w",
