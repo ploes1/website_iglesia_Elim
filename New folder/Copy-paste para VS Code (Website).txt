@@ -3,3 +3,9 @@ Copy-paste para VS Code (Website)
 <ol type="a" class="lista-evidencias con-sangria espacio-arriba">
               <li></li><li></li><li></li>
             </ol>
+<details class="doctrina-item">
+          <summary></summary>
+          <div class="doctrina-contenido">
+            <div class="versiculo-box"><strong>:</strong> ""</div>
+          </div>
+        </details>
