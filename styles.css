@@ -706,6 +706,13 @@ a.button {
   margin-left: 20px;
   margin-bottom: 12px;
 }
+/* Solo estiliza el número/viñeta si el <li> tiene un <h3> adentro */
+.doctrina-contenido ol > li:has(> h3)::marker,
+.doctrina-contenido ul > li:has(> h3)::marker {
+  color: #facc15;
+  font-weight: bold;
+  font-size: 1.17em; /* Tamaño equivalente al h3 */
+}
 
 /* Caja destacada para pasajes bíblicos */
 .versiculo-box {
