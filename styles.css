@@ -34,7 +34,9 @@ body.cuerpo {
   background-color: #0f172a; /* Mismo color que el fondo del body para tapar el texto al hacer scroll */
   border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Separación elegante */
 }
-
+sup[id] {
+  scroll-margin-top: 90px; /* Ajusta según lo que necesites */
+}
 .header-brand {
   display: flex;
   align-items: center;

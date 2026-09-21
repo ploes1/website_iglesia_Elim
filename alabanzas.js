@@ -1,17 +1,17 @@
 // 1. Lista de canciones (agrega aquí todas las que necesites)
 const alabanzas = [
   {
-    titulo: "Santo por Siempre (Versión)",
-    artista: "Chris Tomlin ft. Miel San Marcos",
-    url: "https://www.youtube.com/watch?v=5wAfWuKWKJw",
-  },
-  {
     titulo: "Purifícame (Versión)",
     artista: "Francheska Morales ft. Ricky & Ryan X Miel San Marcos",
     url: "https://www.youtube.com/watch?v=inWU1vzW2Ms",
   },
   {
-    titulo: "Santo y Digno (Versión)",
+    titulo: "Santo por Siempre (Versión)",
+    artista: "ECCOS",
+    url: "https://www.youtube.com/watch?v=sE2vem7PuHk",
+  },
+  {
+    titulo: "Digno y Santo (Versión)",
     artista: "Johan y Sofi",
     url: "https://www.youtube.com/watch?v=qYDvR--_EqU",
   },
@@ -46,6 +46,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=L2EqWBfFWXs",
   },
   {
+    titulo: "Al que está sentado en el trono",
+    artista: "Generación 12 ft. Johan Manjarrés (Versión)",
+    url: "https://www.youtube.com/watch?v=yGSLKbpFLAU",
+  },
+  {
     titulo: "MI SANADOR",
     artista: "Miel San Marcos",
     url: "https://www.youtube.com/watch?v=pPSphmJx7GM",
@@ -69,6 +74,11 @@ const alabanzas = [
     titulo: "En Tu Presencia",
     artista: "Jaime Murrell",
     url: "https://www.youtube.com/watch?v=BE2Slnik1ug",
+  },
+  {
+    titulo: "Sumérgeme",
+    artista: "Jesus Adrián Romero",
+    url: "https://www.youtube.com/watch?v=qdCFT8k1vvE",
   },
   {
     titulo: "Con Tu Sangre",
@@ -124,6 +134,11 @@ const alabanzas = [
     titulo: "Dios está aquí",
     artista: "Javier Gacías Mateo",
     url: "https://www.youtube.com/watch?v=-1lEvbddHD8",
+  },
+  {
+    titulo: "Quiero Darte Adoración",
+    artista: "Joel Ruano",
+    url: "https://www.youtube.com/watch?v=BQc4xgBwHPg",
   },
   {
     titulo: "Soy Deudor",
@@ -229,6 +244,11 @@ const alabanzas = [
     titulo: "Alabad a Jehová (Versión)",
     artista: "Dominio público",
     url: "https://www.youtube.com/watch?v=9UtpgAkBE6A",
+  },
+  {
+    titulo: "Yo me alegré (Yo iré) (Versión)",
+    artista: "Dominio público",
+    url: "https://www.youtube.com/watch?v=LFhY4sweVhM",
   },
 ];
 
