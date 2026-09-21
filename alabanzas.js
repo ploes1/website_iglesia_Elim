@@ -171,6 +171,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=bgJmmo1uV-I",
   },
   {
+    titulo: "Mirad Cuál Amor Nos Ha Dado El Padre (Versión)",
+    artista: "María Luisa Piraquive",
+    url: "https://www.youtube.com/watch?v=ZUrLpQl6Ww8",
+  },
+  {
     titulo: "Demos Gracias al Señor (Versión)",
     artista: "Matías Ramos",
     url: "https://www.youtube.com/watch?v=CKMWHGFqHhE",
