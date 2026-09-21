@@ -37,6 +37,21 @@ body.cuerpo {
 sup[id] {
   scroll-margin-top: 90px; /* Ajusta según lo que necesites */
 }
+/* Quita el subrayado y asigna un color personalizado */
+sup a {
+  text-decoration: none; /* Elimina el subrayado */
+  color: inherit; /* Hereda el color del texto que lo rodea (o usa un color hex como #333) */
+}
+
+/* Opcional: añade un efecto visual al pasar el cursor */
+sup a:hover {
+  text-decoration: underline; /* O cambialo a otro color */
+  color: #facc15;
+}
+.nota-ref {
+  text-decoration: none;
+  color: inherit; /* Hereda el color de texto normal */
+}
 .header-brand {
   display: flex;
   align-items: center;

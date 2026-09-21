@@ -36,6 +36,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=UbEUeFC3lh4",
   },
   {
+    titulo: "Al que está sentado en el trono",
+    artista: "Generación 12 ft. Johan Manjarrés (Versión)",
+    url: "https://www.youtube.com/watch?v=yGSLKbpFLAU",
+  },
+  {
     titulo: "Gracias",
     artista: "Marcos Witt",
     url: "https://www.youtube.com/watch?v=Y27WgAWYd3U",
@@ -44,11 +49,6 @@ const alabanzas = [
     titulo: "Este es mi deseo",
     artista: "Claudio Freidzon",
     url: "https://www.youtube.com/watch?v=L2EqWBfFWXs",
-  },
-  {
-    titulo: "Al que está sentado en el trono",
-    artista: "Generación 12 ft. Johan Manjarrés (Versión)",
-    url: "https://www.youtube.com/watch?v=yGSLKbpFLAU",
   },
   {
     titulo: "MI SANADOR",
