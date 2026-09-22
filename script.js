@@ -169,6 +169,13 @@ function buscar() {
     texto.includes("creencia")
   ) {
     window.location.href = "confesion_de_fe.html";
+  } else if (
+    texto.includes("servicio") ||
+    texto.includes("escuela bíblica") ||
+    texto.includes("escuela dominical") ||
+    texto.includes("servir")
+  ) {
+    window.location.href = "servicios.html";
   } else if (mensaje) {
     mensaje.textContent =
       "No encontramos esa sección. Intenta con 'horarios' o 'ubicación'.";
