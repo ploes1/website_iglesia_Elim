@@ -136,6 +136,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=-1lEvbddHD8",
   },
   {
+    titulo: "Hay Momentos",
+    artista: "Palabra en Acción",
+    url: "https://www.youtube.com/watch?v=v-IQmf4sarY",
+  },
+  {
     titulo: "Quiero Darte Adoración",
     artista: "Joel Ruano",
     url: "https://www.youtube.com/watch?v=BQc4xgBwHPg",
