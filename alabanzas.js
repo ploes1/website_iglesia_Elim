@@ -136,8 +136,8 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=-1lEvbddHD8",
   },
   {
-    titulo: "Hay Momentos",
-    artista: "Palabra en Acción",
+    titulo: "Hay Momentos (Versión)",
+    artista: "Grupo Inspiración",
     url: "https://www.youtube.com/watch?v=v-IQmf4sarY",
   },
   {
