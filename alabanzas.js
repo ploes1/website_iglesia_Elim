@@ -151,6 +151,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=YdmYaSFwprs",
   },
   {
+    titulo: "Aleluya/Te Adoramos",
+    artista: "Tony Pérez",
+    url: "https://www.youtube.com/watch?v=_zH7MZxPcNY",
+  },
+  {
     titulo: "Yo Sé Que Estás Aquí",
     artista: "Fernel Monroy",
     url: "https://www.youtube.com/watch?v=sg5KZwsLC7A",
@@ -214,6 +219,11 @@ const alabanzas = [
     titulo: "No hay Dios tan grande como Tú (Versión)",
     artista: "Dominio público",
     url: "https://www.youtube.com/watch?v=9xNjDak3iy0",
+  },
+  {
+    titulo: "Espíritu de Dios (Versión)",
+    artista: "Dominio público",
+    url: "https://www.youtube.com/watch?v=SB-PFvb59sw",
   },
   {
     titulo: "Qué bueno es el Señor (Versión)",
