@@ -60,7 +60,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- BUSCADOR EN TIEMPO REAL (actividades.html) ---
   const inputActividades = document.getElementById("input-busqueda");
-  const cardsActividades = document.querySelectorAll(".cards .card");
+  const cardsActividades = document.querySelectorAll(
+    ".cards-actividades .card, .cards .card",
+  );
   const mensajeError = document.getElementById("mensaje-error");
 
   if (inputActividades) {
@@ -184,55 +186,56 @@ function buscar() {
 
 // --- CARRUSEL AUTOMÁTICO DE FONDOS (actividades.html) ---
 document.addEventListener("DOMContentLoaded", () => {
-  const imagenesCarrusel = document.querySelectorAll(".carrusel-img");
-  const puntosCarrusel = document.querySelectorAll(".carrusel-puntos .punto");
+  const tarjetasCarrusel = document.querySelectorAll(".tarjeta-evento");
 
-  if (imagenesCarrusel.length > 0) {
-    let indiceActual = 0;
-    let temporizador = null;
+  tarjetasCarrusel.forEach((tarjeta) => {
+    const imagenesCarrusel = tarjeta.querySelectorAll(".carrusel-img");
+    const puntosCarrusel = tarjeta.querySelectorAll(".carrusel-puntos .punto");
 
-    // ⏱️ TIEMPO QUE SE QUEDA CADA FOTO (3000 ms = 3 segundos)
-    // Puedes cambiarlo a 2000 (2 seg) o 1500 (1.5 seg) si lo quieres más rápido
-    const TIEMPO_FOTO = 3000;
+    if (imagenesCarrusel.length > 0) {
+      let indiceActual = 0;
+      let temporizador = null;
+      const TIEMPO_FOTO = 3000; // 3 segundos por foto
 
-    const cambiarFoto = (nuevoIndice) => {
-      // 1. Apagar todas las fotos y todos los puntos
-      imagenesCarrusel.forEach((img) => img.classList.remove("activa"));
-      puntosCarrusel.forEach((pto) => pto.classList.remove("activo"));
+      const cambiarFoto = (nuevoIndice) => {
+        // Apagar solo las fotos y puntos de ESTA tarjeta
+        imagenesCarrusel.forEach((img) => img.classList.remove("activa"));
+        puntosCarrusel.forEach((pto) => pto.classList.remove("activo"));
 
-      // 2. Calcular el índice correcto (vuelve a 0 al llegar al final)
-      indiceActual =
-        (nuevoIndice + imagenesCarrusel.length) % imagenesCarrusel.length;
+        // Calcular índice correcto (loop)
+        indiceActual =
+          (nuevoIndice + imagenesCarrusel.length) % imagenesCarrusel.length;
 
-      // 3. Encender la foto y el punto seleccionado
-      if (imagenesCarrusel[indiceActual]) {
-        imagenesCarrusel[indiceActual].classList.add("activa");
-      }
-      if (puntosCarrusel[indiceActual]) {
-        puntosCarrusel[indiceActual].classList.add("activo");
-      }
-    };
+        // Activar la foto y el punto correspondiente
+        if (imagenesCarrusel[indiceActual]) {
+          imagenesCarrusel[indiceActual].classList.add("activa");
+        }
+        if (puntosCarrusel[indiceActual]) {
+          puntosCarrusel[indiceActual].classList.add("activo");
+        }
+      };
 
-    const siguienteFoto = () => {
-      cambiarFoto(indiceActual + 1);
-    };
+      const siguienteFoto = () => {
+        cambiarFoto(indiceActual + 1);
+      };
 
-    const reiniciarTemporizador = () => {
-      if (temporizador) clearInterval(temporizador);
-      temporizador = setInterval(siguienteFoto, TIEMPO_FOTO);
-    };
+      const reiniciarTemporizador = () => {
+        if (temporizador) clearInterval(temporizador);
+        temporizador = setInterval(siguienteFoto, TIEMPO_FOTO);
+      };
 
-    // 🚀 1. Forzar a arrancar SIEMPRE en la primera foto (índice 0)
-    cambiarFoto(0);
-    reiniciarTemporizador();
+      // Iniciar en la primera foto
+      cambiarFoto(0);
+      reiniciarTemporizador();
 
-    // 🖱️ 2. Hacer clic en los puntitos para ir a una foto específica
-    puntosCarrusel.forEach((punto, index) => {
-      punto.addEventListener("click", (e) => {
-        e.stopPropagation();
-        cambiarFoto(index);
-        reiniciarTemporizador(); // Reinicia los 3 segundos desde este clic
+      // Clics en los puntitos de esta tarjeta
+      puntosCarrusel.forEach((punto, index) => {
+        punto.addEventListener("click", (e) => {
+          e.stopPropagation();
+          cambiarFoto(index);
+          reiniciarTemporizador();
+        });
       });
-    });
-  }
+    }
+  });
 });
