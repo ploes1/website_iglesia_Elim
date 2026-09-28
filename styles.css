@@ -996,9 +996,11 @@ a.button {
   justify-content: center;
   min-height: 75vh;
   padding: 3rem 1.5rem;
-  background:
-    linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.75)),
-    url("Culto de Santa Cena/Santa Cena (1).jpeg") center/cover no-repeat;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.92),
+    rgba(15, 23, 42, 0.75)
+  );
   color: #ffffff;
   text-align: center;
 }
