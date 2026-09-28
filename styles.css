@@ -793,17 +793,19 @@ a.button {
 .tarjeta-evento {
   position: relative;
   width: 100%;
-  min-height: 460px;
+  min-height: 480px;
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end; /* <--- ¡ESTO BAJA EL TEXTO Y EL BOTÓN HASTA ABAJO DEL TODO! */
   text-align: left;
+  padding: 0; /* Quita el relleno viejo que lo desalineaba */
 }
 
-/* Contenedor de las fotos */
+/* Fotos de fondo */
 .carrusel-fondo {
   position: absolute;
   inset: 0;
@@ -813,7 +815,6 @@ a.button {
   background-color: #0f172a;
 }
 
-/* Fotos con efecto de desvanecimiento suave */
 .carrusel-img {
   position: absolute;
   inset: 0;
@@ -824,41 +825,40 @@ a.button {
   opacity: 0;
   transform: scale(1);
   transition:
-    opacity 0.4s ease-in-out,
-    transform 2s ease-out;
+    opacity 0.5s ease-in-out,
+    transform 3s ease-out;
 }
 
-/* La foto activa se hace visible y hace un ligero zoom */
 .carrusel-img.activa {
   opacity: 1;
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
-/* Capa de degradado oscuro */
+/* Sombra oscura que cubre bien la parte de abajo donde está el texto */
 .tarjeta-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to top,
     rgba(15, 23, 42, 0.98) 0%,
-    rgba(15, 23, 42, 0.6) 35%,
-    rgba(15, 23, 42, 0.25) 70%,
+    rgba(15, 23, 42, 0.8) 45%,
+    rgba(15, 23, 42, 0.15) 75%,
     transparent 100%
   );
   z-index: 2;
 }
 
-/* Indicadores de puntitos interactivos */
+/* Indicadores de puntitos arriba a la derecha */
 .carrusel-puntos {
   position: absolute;
-  top: 18px;
+  top: 20px;
   right: 24px;
-  z-index: 10; /* Siempre por encima de todo */
+  z-index: 10;
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 6px 12px;
-  background: rgba(15, 23, 42, 0.45); /* Cápsula oscura sutil */
+  background: rgba(15, 23, 42, 0.5);
   border-radius: 20px;
   backdrop-filter: blur(4px);
 }
@@ -878,20 +878,22 @@ a.button {
 }
 
 .carrusel-puntos .punto.activo {
-  background: #facc15; /* Punto dorado activo */
-  width: 24px; /* Se estira en píldora */
+  background: #facc15;
+  width: 24px;
   border-radius: 12px;
 }
-/* Contenido sobre la imagen */
+
+/* Contenido abajo: Texto a la izquierda y Botón a la derecha */
 .tarjeta-cuerpo {
   position: relative;
   z-index: 3;
   width: 100%;
-  padding: 26px 34px;
+  padding: 36px 40px; /* Buen espacio con respecto a los bordes inferiores */
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 24px;
+  gap: 28px;
+  box-sizing: border-box;
 }
 
 .tarjeta-info {
@@ -903,44 +905,48 @@ a.button {
   background-color: #facc15;
   color: #0f172a;
   font-weight: 700;
-  font-size: 0.8rem;
-  padding: 4px 12px;
+  font-size: 0.85rem;
+  padding: 5px 14px;
   border-radius: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   letter-spacing: 0.5px;
 }
 
+/* Título más grande y con más presencia */
 .tarjeta-titulo {
   color: #f8fafc;
-  font-size: 1.85rem;
+  font-size: 2.4rem; /* <-- Antes era 1.85rem, ahora tiene impacto */
   font-weight: 800;
-  margin: 0 0 8px 0;
-  line-height: 1.2;
+  margin: 0 0 10px 0;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
 }
 
+/* Descripción más grande y legible */
 .tarjeta-descripcion {
   color: #cbd5e1;
-  font-size: 0.98rem;
-  line-height: 1.5;
+  font-size: 1.12rem; /* <-- Letra más grande y cómoda de leer */
+  line-height: 1.6;
   margin: 0;
-  max-width: 650px;
+  max-width: 680px;
 }
 
-/* Botón estilo píldora Elevation Church */
+/* Botón con mejor proporción */
 .btn-tarjeta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background-color: #f8fafc;
   color: #0f172a;
-  padding: 12px 28px;
+  padding: 14px 32px; /* <-- Botón más cómodo */
   border-radius: 9999px;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1rem;
   text-decoration: none;
   transition: all 0.25s ease;
   white-space: nowrap;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  margin-bottom: 6px;
 }
 
 .btn-tarjeta:hover {
