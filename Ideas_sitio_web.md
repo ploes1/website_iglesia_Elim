@@ -5,5 +5,4 @@
 * Añadir imágenes en las secciones que lo requieran
 * Añadir actividades o eventos próximos en "Actividades"
 * Añadir contenido sobre los servicios en la sección "Servicios" y ponerlo como texto, no como cajas de información.
-* Servicio de Sala cuna
 * 
