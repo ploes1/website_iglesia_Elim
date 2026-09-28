@@ -181,3 +181,58 @@ function buscar() {
       "No encontramos esa sección. Intenta con 'horarios' o 'ubicación'.";
   }
 }
+
+// --- CARRUSEL AUTOMÁTICO DE FONDOS (actividades.html) ---
+document.addEventListener("DOMContentLoaded", () => {
+  const imagenesCarrusel = document.querySelectorAll(".carrusel-img");
+  const puntosCarrusel = document.querySelectorAll(".carrusel-puntos .punto");
+
+  if (imagenesCarrusel.length > 0) {
+    let indiceActual = 0;
+    let temporizador = null;
+
+    // ⏱️ TIEMPO QUE SE QUEDA CADA FOTO (3000 ms = 3 segundos)
+    // Puedes cambiarlo a 2000 (2 seg) o 1500 (1.5 seg) si lo quieres más rápido
+    const TIEMPO_FOTO = 3000;
+
+    const cambiarFoto = (nuevoIndice) => {
+      // 1. Apagar todas las fotos y todos los puntos
+      imagenesCarrusel.forEach((img) => img.classList.remove("activa"));
+      puntosCarrusel.forEach((pto) => pto.classList.remove("activo"));
+
+      // 2. Calcular el índice correcto (vuelve a 0 al llegar al final)
+      indiceActual =
+        (nuevoIndice + imagenesCarrusel.length) % imagenesCarrusel.length;
+
+      // 3. Encender la foto y el punto seleccionado
+      if (imagenesCarrusel[indiceActual]) {
+        imagenesCarrusel[indiceActual].classList.add("activa");
+      }
+      if (puntosCarrusel[indiceActual]) {
+        puntosCarrusel[indiceActual].classList.add("activo");
+      }
+    };
+
+    const siguienteFoto = () => {
+      cambiarFoto(indiceActual + 1);
+    };
+
+    const reiniciarTemporizador = () => {
+      if (temporizador) clearInterval(temporizador);
+      temporizador = setInterval(siguienteFoto, TIEMPO_FOTO);
+    };
+
+    // 🚀 1. Forzar a arrancar SIEMPRE en la primera foto (índice 0)
+    cambiarFoto(0);
+    reiniciarTemporizador();
+
+    // 🖱️ 2. Hacer clic en los puntitos para ir a una foto específica
+    puntosCarrusel.forEach((punto, index) => {
+      punto.addEventListener("click", (e) => {
+        e.stopPropagation();
+        cambiarFoto(index);
+        reiniciarTemporizador(); // Reinicia los 3 segundos desde este clic
+      });
+    });
+  }
+});
