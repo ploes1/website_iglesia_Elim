@@ -246,6 +246,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=eQdw0SB0jOI",
   },
   {
+    titulo: "Te exaltaré, mi Dios, mi Rey (Versión)",
+    artista: "Dominio público",
+    url: "https://www.youtube.com/watch?v=9bmNaJW2Dik",
+  },
+  {
     titulo: "Sin Santidad Nadie Verá al Señor (Versión)",
     artista: "Dominio público",
     url: "https://www.youtube.com/watch?v=m-iD4MWwoYE",
