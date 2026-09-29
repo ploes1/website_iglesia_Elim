@@ -1112,16 +1112,16 @@ a.button {
 .visit-counter-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
 }
 
 .visit-counter {
   font-family: var(--fuente-principal, "Arial", sans-serif);
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  font-size: clamp(0.85rem, 2vw, 1rem);
   color: #ffffff;
   background: linear-gradient(135deg, #1e3a8a, #2563eb, #3b82f6);
-  padding: 0.5rem 1.2rem;
+  padding: 0.45rem 1.1rem;
   border-radius: 50px;
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
   display: inline-flex;
@@ -1141,4 +1141,10 @@ a.button {
 .visit-counter:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+}
+
+/* Alineación y margen del copyright */
+.copy {
+  margin: 0;
+  text-align: center;
 }
