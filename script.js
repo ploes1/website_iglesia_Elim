@@ -243,18 +243,36 @@ document.addEventListener("DOMContentLoaded", () => {
 // -------------------------------------------------
 // Contador de visitas permanente (Cloudflare Workers + KV)
 // -------------------------------------------------
+/* -------------------------------------------------
+   Contador de visitas – una visita por dispositivo
+   ------------------------------------------------- */
 (function () {
-  const apiUrl = "https://visit-counter.ploes-3712.workers.dev/count";
+  const API_BASE = "https://visit-counter.ploes-3712.workers.dev/count";
   const contadorEl = document.getElementById("visit-count");
+  const LOCAL_KEY = "has-visited"; // marca en localStorage
 
-  fetch(apiUrl, { credentials: "include" }) // enviar cookies al Worker
+  // ¿Este dispositivo ya ha contado antes?
+  const yaVisitado = localStorage.getItem(LOCAL_KEY) === "true";
+
+  // Si es la primera visita, pedimos al Worker que incremente (inc=1);
+  // si ya visitó antes, solo leemos (inc=0) para no sumar de nuevo.
+  const apiUrl = yaVisitado ? `${API_BASE}?inc=0` : `${API_BASE}?inc=1`;
+
+  fetch(apiUrl)
     .then((r) => r.json())
     .then((data) => {
       if (contadorEl)
         contadorEl.textContent = Number(data.value).toLocaleString();
+      // Guardamos la marca después de la primera llamada exitosa
+      if (!yaVisitado) localStorage.setItem(LOCAL_KEY, "true");
     })
     .catch((err) => {
       console.warn("Contador falló → fallback local", err);
-      // (fallback idéntico al anterior)
+      // Fallback sencillo: muestra un número local (no persiste en el servidor)
+      const local = Number(localStorage.getItem("visit-count-fallback")) || 0;
+      const nuevo = local + 1;
+      localStorage.setItem("visit-count-fallback", nuevo);
+      if (contadorEl)
+        contadorEl.textContent = `${nuevo.toLocaleString()} (local)`;
     });
 })();
