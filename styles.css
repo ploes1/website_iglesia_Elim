@@ -1061,3 +1061,65 @@ a.button {
     width: clamp(160px, 45vw, 220px);
   }
 }
+/* -------------------------------------------------
+   Contador de visitas – diseño atractivo y responsive
+   ------------------------------------------------- */
+.visit-counter-wrapper {
+  /* Centra el contador y le da un poco de margen superior */
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem; /* espacio entre hero y el contador */
+  padding-bottom: 1rem; /* separación del pie de página */
+}
+
+/* Caja del contador */
+.visit-counter {
+  font-family: var(--fuente-principal, "Arial", sans-serif);
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  color: #fff; /* texto claro */
+  background: linear-gradient(
+    135deg,
+    #1e3a8a,
+    /* azul oscuro */ #2563eb,
+    /* azul medio */ #60a5fa
+  ); /* azul claro */
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.6rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Icono opcional (emoji) – da toque visual */
+.visit-counter::before {
+  content: "👥"; /* icono de comunidad */
+  font-size: 1.1em;
+}
+
+/* Hover – ligero “pop” */
+.visit-counter:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* Variante “sticky” (si quieres que quede siempre visible al final) */
+@media (min-width: 640px) {
+  .visit-counter-wrapper {
+    position: sticky;
+    bottom: 0;
+    background: transparent; /* evita que el sticky cubra contenido */
+    z-index: 10;
+  }
+}
+
+/* Adaptación a móviles – un poco más pequeño */
+@media (max-width: 480px) {
+  .visit-counter {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

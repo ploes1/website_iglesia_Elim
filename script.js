@@ -239,3 +239,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// ----------------------------------------------
+//  Contador de visitas con CountAPI (https://countapi.xyz/)
+// ----------------------------------------------
+(function () {
+  const COUNTER_NAMESPACE = "iglesia_elim";
+  const COUNTER_KEY = "site_visits";
+
+  // URL de la API: aumenta el contador en 1 y devuelve el total
+  const apiUrl = `https://api.countapi.xyz/hit/${COUNTER_NAMESPACE}/${COUNTER_KEY}`;
+
+  fetch(apiUrl)
+    .then((res) => res.json())
+    .then((data) => {
+      // data.value contiene el número total de visitas
+      const counterEl = document.getElementById("visit-count");
+      if (counterEl) {
+        counterEl.textContent = data.value.toLocaleString();
+      }
+    })
+    .catch((err) => {
+      console.error("Error al obtener el contador de visitas:", err);
+      // Si falla, muestra un guion en vez del número
+      const counterEl = document.getElementById("visit-count");
+      if (counterEl) counterEl.textContent = "-";
+    });
+})();
