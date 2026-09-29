@@ -956,34 +956,79 @@ a.button {
   box-shadow: 0 6px 18px rgba(250, 204, 21, 0.45);
 }
 
-/* Responsivo para celulares */
+/* ============================================================
+   AJUSTE DE TARJETAS Y CARRUSEL PARA CELULARES (max-width: 650px)
+   ============================================================ */
 @media (max-width: 650px) {
+  /* 1. Tarjeta con mejor altura y espacio */
   .tarjeta-evento {
-    min-height: 350px;
+    min-height: 420px;
   }
 
+  /* 2. Reserva 56px arriba para que el badge jamás choque con los puntos */
   .tarjeta-cuerpo {
-    padding: 20px;
+    padding: 56px 18px 24px 18px;
     flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
   }
 
+  /* 3. Puntos del carrusel más compactos y pequeños en móviles */
   .carrusel-puntos {
-    top: 14px;
-    right: 18px;
+    top: 12px;
+    right: 14px;
+    padding: 4px 8px;
+    gap: 4px;
+    background: rgba(
+      15,
+      23,
+      42,
+      0.7
+    ); /* Fondo un poco más oscuro para mejor legibilidad */
   }
 
+  .carrusel-puntos .punto {
+    width: 6px;
+    height: 6px;
+  }
+
+  .carrusel-puntos .punto.activo {
+    width: 16px;
+  }
+
+  /* 4. Badge amarillo adaptable */
+  .badge-evento {
+    font-size: 0.78rem;
+    padding: 5px 12px;
+    margin-bottom: 6px;
+    line-height: 1.3;
+    max-width: 100%;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  /* 5. Título y descripción balanceados */
   .tarjeta-titulo {
-    font-size: 1.45rem;
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+    line-height: 1.25;
   }
 
   .tarjeta-descripcion {
     font-size: 0.9rem;
+    line-height: 1.5;
+    color: #e2e8f0;
   }
 
+  /* 6. Botón full-width bien posicionado */
   .btn-tarjeta {
     width: 100%;
     margin-top: 12px;
+    margin-bottom: 0;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    text-align: center;
   }
 }
 /* =================================================
