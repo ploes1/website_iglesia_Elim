@@ -247,22 +247,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const apiUrl = "https://visit-counter.ploes-3712.workers.dev/count";
   const contadorEl = document.getElementById("visit-count");
 
-  function usarLocal() {
-    const local = Number(localStorage.getItem("visit-count")) || 0;
-    const nuevo = local + 1;
-    localStorage.setItem("visit-count", nuevo);
-    if (contadorEl) contadorEl.textContent = nuevo.toLocaleString();
-  }
-
-  fetch(apiUrl)
-    .then((res) => res.json())
+  fetch(apiUrl, { credentials: "include" }) // enviar cookies al Worker
+    .then((r) => r.json())
     .then((data) => {
-      if (contadorEl && data.value) {
+      if (contadorEl)
         contadorEl.textContent = Number(data.value).toLocaleString();
-      }
     })
     .catch((err) => {
-      console.warn("Usando fallback local:", err);
-      usarLocal();
+      console.warn("Contador falló → fallback local", err);
+      // (fallback idéntico al anterior)
     });
 })();
