@@ -240,29 +240,29 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// ----------------------------------------------
-//  Contador de visitas con CountAPI (https://countapi.xyz/)
-// ----------------------------------------------
+// -------------------------------------------------
+// Contador de visitas permanente (Cloudflare Workers + KV)
+// -------------------------------------------------
 (function () {
-  const COUNTER_NAMESPACE = "iglesia_elim";
-  const COUNTER_KEY = "site_visits";
+  const apiUrl = "https://visit-counter.ploes-3712.workers.dev/count";
+  const contadorEl = document.getElementById("visit-count");
 
-  // URL de la API: aumenta el contador en 1 y devuelve el total
-  const apiUrl = `https://api.countapi.xyz/hit/${COUNTER_NAMESPACE}/${COUNTER_KEY}`;
+  function usarLocal() {
+    const local = Number(localStorage.getItem("visit-count")) || 0;
+    const nuevo = local + 1;
+    localStorage.setItem("visit-count", nuevo);
+    if (contadorEl) contadorEl.textContent = nuevo.toLocaleString();
+  }
 
   fetch(apiUrl)
     .then((res) => res.json())
     .then((data) => {
-      // data.value contiene el número total de visitas
-      const counterEl = document.getElementById("visit-count");
-      if (counterEl) {
-        counterEl.textContent = data.value.toLocaleString();
+      if (contadorEl && data.value) {
+        contadorEl.textContent = Number(data.value).toLocaleString();
       }
     })
     .catch((err) => {
-      console.error("Error al obtener el contador de visitas:", err);
-      // Si falla, muestra un guion en vez del número
-      const counterEl = document.getElementById("visit-count");
-      if (counterEl) counterEl.textContent = "-";
+      console.warn("Usando fallback local:", err);
+      usarLocal();
     });
 })();
