@@ -111,16 +111,69 @@
         />
       </div>
       <div id="mensaje-error" class="mensaje-error"></div>
-      <section class="section">
-        <h2 class="section-titulo">Escuela Bíblica</h2>
-        <p class="texto-parrafo">
-          Con la Escuela Bíblica de la Iglesia Elim, te ofrecemos un estudio muy
-          profundo y meditado de la Palabra de Dios durante la semana.
-          Especialmente, los jueves leemos pasajes de un libro en específico de
-          la Biblia, y vamos avanzando con explicaciones muy detalladas con las
-          que Dios puede hablar de una manera especial a tu vida.<br />Por
-          ahora, estamos estudiando la carta a los Romanos del apóstol Pablo.
-        </p>
+
+      <section class="section-actividades">
+        <div class="cards-actividades">
+          <article class="tarjeta-evento card" id="tarjeta-carrusel">
+            <!-- 1. Carrusel de Fotos de Fondo -->
+            <div class="carrusel-fondo" id="carrusel-fondo">
+              <img
+                src="Bible Study Images/Estudio_Biblico (1).jpg"
+                alt="Escuela Bíblica 1"
+                class="carrusel-img activa"
+              />
+              <img
+                src="Bible Study Images/Estudio_Biblico (3).avif"
+                alt="Escuela Bíblica 2"
+                class="carrusel-img"
+              />
+              <img
+                src="Bible Study Images/Estudio_Biblico (2).avif"
+                alt="Escuela Bíblica 3"
+                class="carrusel-img"
+              />
+            </div>
+
+            <!-- 2. Capa oscura degradada para que el texto sea legible -->
+            <div class="tarjeta-overlay"></div>
+
+            <!-- 3. Indicadores de puntitos (esquina superior derecha) -->
+            <div class="carrusel-puntos">
+              <span class="punto activo" data-index="0"></span>
+              <span class="punto" data-index="1"></span>
+              <span class="punto" data-index="2"></span>
+            </div>
+
+            <!-- 4. Contenido al frente (Texto a la izq, Botón a la der) -->
+            <div class="tarjeta-cuerpo">
+              <div class="tarjeta-info">
+                <span class="badge-evento">Todos los días</span>
+                <h2 class="tarjeta-titulo">Escuela Bíblica</h2>
+                <p class="tarjeta-descripcion">
+                  Con la Escuela Bíblica de la Iglesia Elim, te ofrecemos un
+                  <strong>estudio</strong> muy profundo y meditado
+                  <strong>de la Palabra de Dios</strong> durante la semana. En
+                  especial, los jueves leemos pasajes de un libro en específico
+                  de la Biblia, y vamos avanzando con explicaciones muy
+                  detalladas con las que Dios puede hablar de una manera
+                  especial a tu vida. Por ahora, estamos estudiando la carta a
+                  los <strong>Romanos</strong> del apóstol Pablo.
+                </p>
+              </div>
+
+              <div class="tarjeta-accion">
+                <a
+                  href="https://whatsapp.com/channel/0029VbBPqz7JJhzQtExPGr06"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-tarjeta"
+                >
+                  Más información
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section class="section-actividades">
