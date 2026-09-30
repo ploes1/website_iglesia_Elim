@@ -251,6 +251,16 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=9bmNaJW2Dik",
   },
   {
+    titulo: "Yo tengo un Amigo que me ama (Versión)",
+    artista: "Dominio público",
+    url: "https://www.youtube.com/watch?v=k17KsdN0zxo",
+  },
+  {
+    titulo: "Qué bueno es el Señor (que mis pecados perdonó) (Versión)",
+    artista: "Dominio público",
+    url: "https://www.youtube.com/watch?v=MHD-eSRGWxw",
+  },
+  {
     titulo: "Sin Santidad Nadie Verá al Señor (Versión)",
     artista: "Dominio público",
     url: "https://www.youtube.com/watch?v=m-iD4MWwoYE",
