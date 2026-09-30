@@ -191,6 +191,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=CKMWHGFqHhE",
   },
   {
+    titulo: "Aquí estoy",
+    artista: "Jaime Murrell",
+    url: "https://www.youtube.com/watch?v=VBj0DM5wDiQ",
+  },
+  {
     titulo: "Canta Aleluya (Versión)",
     artista: "Maranatha! Latin",
     url: "https://www.youtube.com/watch?v=7jzInKNHOFo",
