@@ -12,4 +12,8 @@ Este sitio web tiene como función ser el sitio principal por el cual la Iglesia
 ## Requisitos
 
 - No utilizar el sitio de manera inapropiada y/o sin autorzación.
-- Seguir las reglas de la licencia MIT (escritas en el archivo LICENSE).
+- Seguir las reglas de la licencia.
+
+## Licencia
+ 
+Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.
