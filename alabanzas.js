@@ -62,7 +62,7 @@ const alabanzas = [
   },
   {
     titulo: "A Dios sea la Gloria (Versión)",
-    artista: "Marcos Witt, Marcos Vidal & Marco Barrientos",
+    artista: "Marcos Witt, Marcos Vidal y Marco Barrientos",
     url: "https://www.youtube.com/watch?v=OPXOuKy7ORo",
   },
   {
@@ -112,7 +112,7 @@ const alabanzas = [
   },
   {
     titulo: "Cuán grande es Él (Versión)",
-    artista: "Abigail Araujo",
+    artista: "Marcos Witt, Marcos Vidal y Marco Barrientos",
     url: "https://www.youtube.com/watch?v=NRdIr3L9-Wk",
   },
   {
@@ -187,7 +187,7 @@ const alabanzas = [
   },
   {
     titulo: "Muévete En Mí (Versión)",
-    artista: "Medley Propósito ft. Bryan Matos & April Grace Jaspe",
+    artista: "Medley Propósito ft. Bryan Matos y April Grace Jaspe",
     url: "https://www.youtube.com/watch?v=bgJmmo1uV-I",
   },
   {
