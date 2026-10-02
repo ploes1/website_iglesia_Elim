@@ -351,12 +351,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const enlaceDirecto = document.getElementById("enlace-directo-yt");
 
   const ejecutarBusqueda = () => {
-    const termino = inputBuscador.value.toLowerCase().trim();
-    const filtradas = alabanzas.filter(
-      (item) =>
-        item.titulo.toLowerCase().includes(termino) ||
-        item.artista.toLowerCase().includes(termino),
-    );
+    // ---------- BÚSQUEDA SIN TILDES ----------
+    const termino = inputBuscador.value
+      .toLowerCase()
+      .normalize("NFD") // separa base + acento
+      .replace(/[\u0300-\u036f]/g, "") // elimina los acentos
+      .trim();
+
+    const filtradas = alabanzas.filter((item) => {
+      const tituloNorm = item.titulo
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+      const artistaNorm = item.artista
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+      return tituloNorm.includes(termino) || artistaNorm.includes(termino);
+    });
     renderAlabanzas(filtradas);
   };
 
