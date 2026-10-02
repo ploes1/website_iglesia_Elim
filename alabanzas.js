@@ -91,6 +91,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=PrNafmJNSmQ",
   },
   {
+    titulo: "Cuán grande es Dios",
+    artista: "God's Version",
+    url: "https://www.youtube.com/watch?v=tbhVHj9AEsI",
+  },
+  {
     titulo: "Quiero Levantar Mis Manos (Versión)",
     artista: "Marcos Witt ft. Montesanto",
     url: "https://www.youtube.com/watch?v=tI70aR3lBIY",
@@ -104,6 +109,11 @@ const alabanzas = [
     titulo: "Tu Fidelidad",
     artista: "Marcos Witt",
     url: "https://www.youtube.com/watch?v=4dB5PIdHoVY",
+  },
+  {
+    titulo: "Cuán grande es Él (Versión)",
+    artista: "Abigail Araujo",
+    url: "https://www.youtube.com/watch?v=NRdIr3L9-Wk",
   },
   {
     titulo: "Levanto Mis Manos",
