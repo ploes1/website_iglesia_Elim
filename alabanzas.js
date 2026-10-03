@@ -116,6 +116,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=NRdIr3L9-Wk",
   },
   {
+    titulo: "Yo me rindo a Él (Versión)",
+    artista: "Jesús Adrián Romero",
+    url: "https://www.youtube.com/watch?v=uaEaX7p4Wq0",
+  },
+  {
     titulo: "Levanto Mis Manos",
     artista: "Samuel Hernandez",
     url: "https://www.youtube.com/watch?v=iM49tkRfJZs",
