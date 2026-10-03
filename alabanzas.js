@@ -36,8 +36,8 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=UbEUeFC3lh4",
   },
   {
-    titulo: "Al que está sentado en el trono",
-    artista: "Generación 12 ft. Johan Manjarrés (Versión)",
+    titulo: "Al que está sentado en el trono (Versión)",
+    artista: "Generación 12 ft. Johan Manjarrés ",
     url: "https://www.youtube.com/watch?v=yGSLKbpFLAU",
   },
   {
