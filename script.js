@@ -276,3 +276,57 @@ document.addEventListener("DOMContentLoaded", () => {
         contadorEl.textContent = `${nuevo.toLocaleString()} (local)`;
     });
 })();
+// ============================================================
+// MÓDULO DE DONACIONES (Selector de Pestañas y Copiar Cuenta)
+// ============================================================
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Selector de Pestañas (Bancos / En Línea / Presencial)
+  const tabBtns = document.querySelectorAll(".tab-btn");
+  const paneles = document.querySelectorAll(".panel-metodo");
+
+  if (tabBtns.length > 0 && paneles.length > 0) {
+    tabBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        tabBtns.forEach((b) => b.classList.remove("activo"));
+        paneles.forEach((p) => p.classList.remove("activo"));
+
+        btn.classList.add("activo");
+        const tabId = btn.getAttribute("data-tab");
+        const targetPanel = document.getElementById(tabId);
+        if (targetPanel) targetPanel.classList.add("activo");
+      });
+    });
+  }
+
+  // 2. Copiar Números de Cuenta con retroalimentación visual
+  const botonesCopiar = document.querySelectorAll(".btn-copiar[data-target]");
+  botonesCopiar.forEach((boton) => {
+    boton.addEventListener("click", () => {
+      const targetId = boton.getAttribute("data-target");
+      const elementoTexto = document.getElementById(targetId);
+
+      if (elementoTexto) {
+        const texto = elementoTexto.innerText.trim();
+        navigator.clipboard
+          .writeText(texto)
+          .then(() => {
+            const originalHtml = boton.innerHTML;
+            boton.innerHTML = "✅ ¡Copiado!";
+            boton.style.background = "#22c55e";
+            boton.style.borderColor = "#22c55e";
+            boton.style.color = "#ffffff";
+
+            setTimeout(() => {
+              boton.innerHTML = originalHtml;
+              boton.style.background = "";
+              boton.style.borderColor = "";
+              boton.style.color = "";
+            }, 2000);
+          })
+          .catch((err) => {
+            console.error("Error al copiar texto: ", err);
+          });
+      }
+    });
+  });
+});

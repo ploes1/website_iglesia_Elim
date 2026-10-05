@@ -1,6 +1,6 @@
-# Sitio Web de la Iglesia Elim "Jesucristo te Ama"
+# Sitio Web de la Iglesia Elim "Jesucristo Te Ama"
 
-Este sitio web tiene como función ser el sitio principal por el cual la Iglesia Elim "Jesucristo te Ama" se da a conocer y expande el mensaje del Evangelio con las puertas abiertas a todo el mundo.
+Este sitio web tiene como función ser el sitio principal por el cual la Iglesia Elim "Jesucristo Te Ama" se da a conocer y expande el mensaje del Evangelio con las puertas abiertas a todo el mundo.
 
 ## Características del sitio web
 

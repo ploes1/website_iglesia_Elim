@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donaciones y Ofrendas - Iglesia Elim</title>
+    <meta
+      name="description"
+      content="Formas de donar, diezmar y ofrendar en la Iglesia Elim Jesucristo Te Ama."
+    />
+    <meta property="og:title" content="Donaciones y Ofrendas - Iglesia Elim" />
+    <meta
+      property="og:description"
+      content="Tu generosidad sostiene la misión y el alcance del Evangelio."
+    />
+    <meta
+      property="og:image"
+      content="https://ploes1.github.io/website_iglesia_Elim/logo_iglesia_Elim2.png"
+    />
+    <link rel="icon" type="image/png" href="logo_iglesia_Elim2.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="cuerpo">
+    <!-- Header -->
+    <header class="header">
+      <a href="index.html" class="header-brand">
+        <img
+          src="logo_iglesia_Elim2.png"
+          alt="Logo Iglesia Elim"
+          class="logo"
+        />
+        <h1 class="titulo">Iglesia Elim</h1>
+      </a>
+      <button
+        class="menu-hbtn"
+        id="btn-menu"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+      >
+        <span class="hbtn-line"></span>
+        <span class="hbtn-line"></span>
+        <span class="hbtn-line"></span>
+      </button>
+    </header>
+
+    <!-- Overlay & Drawer Menu -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+    <aside class="menu-drawer" id="menu-drawer">
+      <div class="drawer-header">
+        <div class="drawer-titulo">
+          <img src="logo_iglesia_Elim2.png" alt="Logo" />
+          <span>Iglesia Elim</span>
+        </div>
+        <button
+          class="drawer-cerrar"
+          id="drawer-cerrar"
+          aria-label="Cerrar menú"
+        >
+          &times;
+        </button>
+      </div>
+      <nav class="drawer-nav">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#horarios">Horarios</a>
+        <a href="index.html#ubicacion">Ubicación</a>
+        <a href="index.html#predicas">Prédicas</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="alabanzas.html">Alabanzas</a>
+        <a href="confesion_de_fe.html">Confesión de Fe</a>
+        <a href="servicios.html">Servicios</a
+        ><a href="donaciones.html" class="active">Donaciones</a>
+      </nav>
+      <div class="drawer-footer">
+        <a
+          href="https://whatsapp.com/channel/0029VbBPqz7JJhzQtExPGr06"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="whatsapp"
+        >
+          Síguenos en WhatsApp
+        </a>
+      </div>
+    </aside>
+
+    <!-- Hero Section -->
+    <section class="donaciones-hero">
+      <span class="donaciones-tag">Generosidad</span>
+      <h2 class="donaciones-titulo">Gracias por tu generosidad</h2>
+      <p class="donaciones-subtitulo">
+        Tu aporte sostiene la obra de Dios, el evangelismo y los proyectos de la
+        Iglesia Elim. Ofrendar toma menos de un minuto.
+      </p>
+      <a href="#metodos" class="btn-donar-cta">Formas de Donar ↓</a>
+    </section>
+
+    <!-- Contenedor Principal -->
+    <main class="donaciones-container" id="metodos">
+      <!-- Selector de Pestañas -->
+      <div class="tabs-metodos" role="tablist">
+        <button class="tab-btn activo" data-tab="transferencia">
+          🏦 Transferencias Bancarias
+        </button>
+        <button class="tab-btn" data-tab="digital">
+          💳 Tarjetas & En Línea
+        </button>
+        <button class="tab-btn" data-tab="presencial">
+          🤝 En Persona / Cultos
+        </button>
+      </div>
+
+      <!-- Panel 1: Transferencias Bancarias -->
+      <div id="transferencia" class="panel-metodo activo">
+        <div class="card-banco">
+          <div class="card-banco-info">
+            <h3>Banco Cuscatlán</h3>
+            <p>Transferencia Directa o UNI</p>
+            <p>A nombre de: <strong>Iglesia Elim Jesucristo Te Ama</strong></p>
+            <p class="numero-cuenta" id="cuenta-cuscatlan">017192682</p>
+          </div>
+          <button class="btn-copiar" data-target="cuenta-cuscatlan">
+            📋 Copiar Cuenta
+          </button>
+        </div>
+      </div>
+
+      <!-- Panel 2: En Línea & Cripto -->
+      <div id="digital" class="panel-metodo">
+        <div class="card-banco">
+          <div class="card-banco-info">
+            <h3>PayPal / Donación Internacional</h3>
+            <p>
+              Donaciones rápidas desde el extranjero con tarjeta de crédito o
+              débito.
+            </p>
+          </div>
+          <a
+            href="https://paypal.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-donar-cta btn-donar-sm"
+          >
+            Donar con PayPal ↗
+          </a>
+        </div>
+
+        <div class="card-banco">
+          <div class="card-banco-info">
+            <h3>Chivo Wallet / Bitcoin</h3>
+            <p>Aceptamos transferencias por red Lightning o Bitcoin.</p>
+            <p class="numero-cuenta" id="cuenta-chivo">iglesiaelim@chivo.sv</p>
+          </div>
+          <button class="btn-copiar" data-target="cuenta-chivo">
+            📋 Copiar Dirección
+          </button>
+        </div>
+      </div>
+
+      <!-- Panel 3: Presencial -->
+      <div id="presencial" class="panel-metodo">
+        <div class="card-banco card-banco-full">
+          <h3>Durante los servicios y cultos</h3>
+          <p>
+            Puedes entregar tus diezmos y ofrendas en sobres especiales
+            disponibles en el templo durante nuestros horarios de culto general,
+            escuela bíblica o reunión de jóvenes.
+          </p>
+          <div class="card-banco-action">
+            <a href="index.html#horarios" class="btn-copiar link-btn">
+              🕒 Ver Horarios de Culto
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pasaje Bíblico (Reutilizando .versiculo-box de Confesión de Fe) -->
+      <div class="versiculo-box espacio-arriba" style="margin: 40px 0 35px">
+        Cada uno dé como propuso en su corazón, no con tristeza ni por
+        obligación porque Dios ama al dador alegre.
+        <div style="margin-top: 6px; color: #facc15; font-weight: bold">
+          — 2 Corintios 9:7
+        </div>
+      </div>
+
+      <!-- Preguntas Frecuentes (Reutilizando .doctrinas-contenedor y <details> de Confesión de Fe) -->
+      <h3
+        style="
+          color: #facc15;
+          font-size: 1.35rem;
+          margin: 30px 0 16px;
+          text-align: left;
+        "
+      >
+        Preguntas Frecuentes
+      </h3>
+
+      <div class="doctrinas-contenedor">
+        <details class="doctrina-item">
+          <summary>¿Cómo se utilizan las donaciones y ofrendas?</summary>
+          <div class="doctrina-contenido">
+            Las ofrendas se destinan al sostenimiento y la mejora del edificio y
+            de los servicios de la Iglesia Elim, y a la organización de eventos
+            y actividades próximas de la Iglesia (de jóvenes y niños por
+            ejemplo).
+          </div>
+        </details>
+
+        <details class="doctrina-item">
+          <summary>¿Puedo solicitar un comprobante de mi donación?</summary>
+          <div class="doctrina-contenido">
+            Sí. Al realizar tu transferencia bancaria, puedes enviar el
+            comprobante a través de nuestro canal de WhatsApp para registro y
+            confirmación pastoral.
+          </div>
+        </details>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Iglesia Elim Jesucristo Te Ama</p>
+      <a
+        href="https://whatsapp.com/channel/0029VbBPqz7JJhzQtExPGr06"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="whatsapp"
+      >
+        Síguenos en WhatsApp
+      </a>
+      <p class="copy">&copy; 2026 Iglesia Elim</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
