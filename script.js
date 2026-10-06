@@ -330,3 +330,71 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+// ============================================================
+// COMPONENTE INTERACTIVO: DodgeField (Esquivar cursor)
+// ============================================================
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("dodge-field");
+  const mover = document.getElementById("dodge-mover");
+
+  if (!container || !mover) return;
+
+  const THRESHOLD = 120; // Distancia (px) a la que empieza a esquivar
+  const MAX_OFFSET = 90; // Máximo desplazamiento (px)
+  let animationFrameId = null;
+  let targetX = 0;
+  let targetY = 0;
+  let currentX = 0;
+  let currentY = 0;
+
+  const updatePosition = () => {
+    // Suavizado (interpolar movimiento)
+    currentX += (targetX - currentX) * 0.15;
+    currentY += (targetY - currentY) * 0.15;
+
+    mover.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+
+    if (
+      Math.abs(targetX - currentX) > 0.01 ||
+      Math.abs(targetY - currentY) > 0.01
+    ) {
+      animationFrameId = requestAnimationFrame(updatePosition);
+    } else {
+      animationFrameId = null;
+    }
+  };
+
+  container.addEventListener("mousemove", (e) => {
+    const rect = container.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const deltaX = e.clientX - centerX;
+    const deltaY = e.clientY - centerY;
+    const distance = Math.hypot(deltaX, deltaY);
+
+    if (distance < THRESHOLD) {
+      // Calcular vector de huida (alejarse del puntero)
+      const angle = Math.atan2(deltaY, deltaX);
+      const force = (1 - distance / THRESHOLD) * MAX_OFFSET;
+
+      targetX = -Math.cos(angle) * force;
+      targetY = -Math.sin(angle) * force;
+    } else {
+      targetX = 0;
+      targetY = 0;
+    }
+
+    if (!animationFrameId) {
+      animationFrameId = requestAnimationFrame(updatePosition);
+    }
+  });
+
+  container.addEventListener("mouseleave", () => {
+    targetX = 0;
+    targetY = 0;
+    if (!animationFrameId) {
+      animationFrameId = requestAnimationFrame(updatePosition);
+    }
+  });
+});

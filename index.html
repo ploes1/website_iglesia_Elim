@@ -394,8 +394,21 @@
         </svg>
         Síguenos en WhatsApp
       </a>
-      <div class="visit-counter-wrapper">
-        <div class="visit-counter"><span id="visit-count">…</span> Visitas</div>
+      <!-- Contador de Visitas Interactivo (Dodge Field) -->
+      <div class="dodge-field" id="dodge-field">
+        <div class="dodge-field__mover" id="dodge-mover">
+          <button
+            class="dodge-field__pill"
+            type="button"
+            aria-label="Contador de visitas"
+          >
+            <span class="dodge-field__labels">
+              <span class="dodge-field__label" data-active="true">
+                👥 <span id="visit-count">…</span> Visitas
+              </span>
+            </span>
+          </button>
+        </div>
       </div>
 
       <p class="copy">&copy; 2026 Iglesia Elim</p>

@@ -1356,3 +1356,85 @@ a.button {
 .link-btn {
   text-decoration: none;
 }
+/* ============================================================
+   CONTADOR INTERACTIVO (Dodge Field - Estilo Azul original)
+   ============================================================ */
+.dodge-field {
+  --df-height: 140px;
+  --df-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: var(--df-height);
+  margin: 10px 0;
+}
+
+.dodge-field__mover {
+  display: inline-grid;
+  will-change: transform;
+}
+
+.dodge-field__pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  margin: 0;
+  padding: 0 28px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.012em;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition:
+    transform 160ms var(--df-ease-out),
+    box-shadow 220ms ease,
+    background 220ms ease;
+}
+
+.dodge-field__pill:active {
+  transform: scale(0.96);
+}
+
+.dodge-field__pill:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .dodge-field__pill:hover {
+    box-shadow: 0 12px 25px rgba(37, 99, 235, 0.5);
+    background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%);
+  }
+}
+
+.dodge-field__labels {
+  display: grid;
+}
+
+.dodge-field__label {
+  grid-area: 1 / 1;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dodge-field__pill {
+    transition: background 220ms ease;
+  }
+  .dodge-field__pill:active {
+    transform: none;
+  }
+}
