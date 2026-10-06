@@ -111,9 +111,10 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=4dB5PIdHoVY",
   },
   {
-    titulo: "Cuán grande es Él (Versión)",
-    artista: "Marcos Witt, Marcos Vidal y Marco Barrientos",
-    url: "https://www.youtube.com/watch?v=NRdIr3L9-Wk",
+    titulo: "Cuán Grande Es Él (Versión)",
+    artista:
+      "ECCOS ft. Antonio & Allison | Enoc Parra | Lowsan Melgar | Factor de Cambio | Joel Rocco",
+    url: "https://www.youtube.com/watch?v=IVH4Vt5djXw",
   },
   {
     titulo: "Yo me rindo a Él (Versión)",
