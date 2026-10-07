@@ -21,6 +21,12 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="cuerpo">
+    <!-- Fondo Aurora Celestial animado en toda la página -->
+    <div class="aurora-bg">
+      <div class="aurora-blob aurora-blob-1"></div>
+      <div class="aurora-blob aurora-blob-2"></div>
+      <div class="aurora-blob aurora-blob-3"></div>
+    </div>
     <header class="header">
       <!-- Marca a la izquierda: Logo + Título -->
       <div class="header-brand">
@@ -101,8 +107,9 @@
       </div>
     </aside>
 
-    <!-- HERO DE INICIO (Con el logo real en alta calidad) -->
+    <!-- HERO DE INICIO (Estilo Premium coordinado con Donaciones) -->
     <section class="home-hero">
+      <span class="hero-tag">Bienvenido</span>
       <img
         src="logo_iglesia_Elim2.png"
         alt="Logo Iglesia Elim Jesucristo Te Ama"
@@ -112,18 +119,22 @@
       />
 
       <h2 class="hero-titulo">
-        La Iglesia Elim “Jesucristo Te Ama” te da la bienvenida
+        La Iglesia Elim "Jesucristo Te Ama" te da la bienvenida
       </h2>
+      <p class="hero-subtitulo">
+        Un lugar de fe, adoración y comunidad para la iglesia en Santa Tecla.
+      </p>
+
+      <div class="buscador-contenedor">
+        <input
+          type="text"
+          id="buscador"
+          placeholder="Buscar horarios, cultos, ubicación..."
+        />
+        <button class="button" onclick="buscar()">Buscar</button>
+      </div>
+      <p id="mensajeBusqueda" class="mensaje-error"></p>
     </section>
-    <div class="buscador-contenedor">
-      <input
-        type="text"
-        id="buscador"
-        placeholder="Buscar horarios, ubicación..."
-      />
-      <button class="button" onclick="buscar()">Buscar</button>
-    </div>
-    <p id="mensajeBusqueda" class="mensaje-error"></p>
     <section class="section-actividades">
       <div class="cards-actividades">
         <article class="tarjeta-evento card" id="tarjeta-carrusel">
