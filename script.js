@@ -298,7 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 2. Copiar Números de Cuenta con retroalimentación visual
+  // 2. Copiar Números de Cuenta con retroalimentación visual moderna
   const botonesCopiar = document.querySelectorAll(".btn-copiar[data-target]");
   botonesCopiar.forEach((boton) => {
     boton.addEventListener("click", () => {
@@ -311,16 +311,20 @@ document.addEventListener("DOMContentLoaded", () => {
           .writeText(texto)
           .then(() => {
             const originalHtml = boton.innerHTML;
+
+            // Cambio visual inmediato
             boton.innerHTML = "✅ ¡Copiado!";
-            boton.style.background = "#22c55e";
+            boton.style.background = "rgba(34, 197, 94, 0.25)";
             boton.style.borderColor = "#22c55e";
-            boton.style.color = "#ffffff";
+            boton.style.color = "#4ade80";
+            boton.style.transform = "scale(1.05)";
 
             setTimeout(() => {
               boton.innerHTML = originalHtml;
               boton.style.background = "";
               boton.style.borderColor = "";
               boton.style.color = "";
+              boton.style.transform = "";
             }, 2000);
           })
           .catch((err) => {
