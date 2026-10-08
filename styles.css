@@ -169,7 +169,7 @@ sup a:hover {
 .menu-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(15, 23, 42, 0.7);
+  background-color: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   opacity: 0;
@@ -192,9 +192,7 @@ sup a:hover {
   bottom: 0;
   width: 320px;
   max-width: 85vw;
-  background: rgba(15, 23, 42, 0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: #0f172a; /* Fondo sólido uniforme */
   border-left: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: -10px 0 35px rgba(0, 0, 0, 0.6);
   z-index: 2000;
@@ -260,6 +258,7 @@ sup a:hover {
   flex-direction: column;
   gap: 6px;
   flex-grow: 1;
+  background: #0f172a !important;
 }
 
 .drawer-nav a {
@@ -290,10 +289,9 @@ sup a:hover {
 
 .drawer-footer {
   padding: 18px 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  background: transparent;
+  border-top: none !important;
+  background: #0f172a !important;
 }
-
 .drawer-footer .whatsapp {
   margin: 0;
   width: 100%;
