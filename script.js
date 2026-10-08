@@ -298,7 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 2. Copiar Números de Cuenta con retroalimentación visual moderna
+  // 2. Copiar Números de Cuenta con retroalimentación visual moderna y fallback
   const botonesCopiar = document.querySelectorAll(".btn-copiar[data-target]");
   botonesCopiar.forEach((boton) => {
     boton.addEventListener("click", () => {
@@ -307,28 +307,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (elementoTexto) {
         const texto = elementoTexto.innerText.trim();
+        const aplicarFeedbackVisual = () => {
+          const originalHtml = boton.innerHTML;
+          boton.innerHTML = "✅ ¡Copiado!";
+          boton.style.background = "rgba(34, 197, 94, 0.25)";
+          boton.style.borderColor = "#22c55e";
+          boton.style.color = "#4ade80";
+          boton.style.transform = "scale(1.05)";
+
+          setTimeout(() => {
+            boton.innerHTML = originalHtml;
+            boton.style.background = "";
+            boton.style.borderColor = "";
+            boton.style.color = "";
+            boton.style.transform = "";
+          }, 2000);
+        };
+
         navigator.clipboard
           .writeText(texto)
           .then(() => {
-            const originalHtml = boton.innerHTML;
-
-            // Cambio visual inmediato
-            boton.innerHTML = "✅ ¡Copiado!";
-            boton.style.background = "rgba(34, 197, 94, 0.25)";
-            boton.style.borderColor = "#22c55e";
-            boton.style.color = "#4ade80";
-            boton.style.transform = "scale(1.05)";
-
-            setTimeout(() => {
-              boton.innerHTML = originalHtml;
-              boton.style.background = "";
-              boton.style.borderColor = "";
-              boton.style.color = "";
-              boton.style.transform = "";
-            }, 2000);
+            aplicarFeedbackVisual();
           })
           .catch((err) => {
-            console.error("Error al copiar texto: ", err);
+            console.error(
+              "Error al copiar con Clipboard API, usando fallback: ",
+              err,
+            );
+            // Métodos tradicionales para navegadores o entornos HTTP
+            const textArea = document.createElement("textarea");
+            textArea.value = texto;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textArea);
+            aplicarFeedbackVisual();
           });
       }
     });
