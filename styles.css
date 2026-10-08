@@ -24,42 +24,39 @@ body.cuerpo {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 100%; /* Ocupa todo el ancho */
+  max-width: 100%;
   width: 100%;
   margin: 0;
   padding: 14px 24px;
   gap: 16px;
   position: sticky;
   top: 0;
-  z-index: 2005; /* Pasa SIEMPRE por encima del contenido */
-  background-color: rgba(
-    15,
-    23,
-    42,
-    0.85
-  ); /* Semi-transparente para ver el fondo animado */
+  z-index: 2005;
+  background-color: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Separación elegante */
-}
-sup[id] {
-  scroll-margin-top: 90px; /* Ajusta según lo que necesites */
-}
-/* Quita el subrayado y asigna un color personalizado */
-sup a {
-  text-decoration: none; /* Elimina el subrayado */
-  color: inherit; /* Hereda el color del texto que lo rodea (o usa un color hex como #333) */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Opcional: añade un efecto visual al pasar el cursor */
+sup[id] {
+  scroll-margin-top: 90px;
+}
+
+sup a {
+  text-decoration: none;
+  color: inherit;
+}
+
 sup a:hover {
-  text-decoration: underline; /* O cambialo a otro color */
+  text-decoration: underline;
   color: #facc15;
 }
+
 .nota-ref {
   text-decoration: none;
-  color: inherit; /* Hereda el color de texto normal */
+  color: inherit;
 }
+
 .header-brand {
   display: flex;
   align-items: center;
@@ -96,7 +93,7 @@ sup a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4.5px; /* Espaciado entre barras */
+  gap: 4.5px;
   padding: 10px;
   flex-shrink: 0;
   transition:
@@ -114,10 +111,9 @@ sup a:hover {
   transform: scale(1.03);
 }
 
-/* Líneas finas y estilizadas */
 .menu-hbtn .hbtn-line {
   display: block;
-  height: 1.5px; /* Más fino, delicado y nítido */
+  height: 1.5px;
   background-color: #f8fafc;
   border-radius: 2px;
   transform-origin: center;
@@ -128,17 +124,14 @@ sup a:hover {
     background-color 0.25s ease;
 }
 
-/* Barra superior */
 .menu-hbtn .hbtn-line:nth-child(1) {
   width: 18px;
 }
 
-/* Barra central: más corta (el toque Más Vida) */
 .menu-hbtn .hbtn-line:nth-child(2) {
   width: 12px;
 }
 
-/* Barra inferior */
 .menu-hbtn .hbtn-line:nth-child(3) {
   width: 18px;
 }
@@ -147,7 +140,6 @@ sup a:hover {
   background-color: #facc15;
 }
 
-/* Transformación limpia a 'X' centrada y simétrica */
 .menu-hbtn.abierto .hbtn-line:nth-child(1) {
   width: 18px;
   transform: translateY(6px) rotate(45deg);
@@ -165,6 +157,7 @@ sup a:hover {
   transform: translateY(-6px) rotate(-45deg);
   background-color: #facc15;
 }
+
 .menu-hbtn.abierto {
   background: rgba(250, 204, 21, 0.2);
   border-color: #facc15;
@@ -223,7 +216,7 @@ sup a:hover {
   align-items: center;
   justify-content: space-between;
   padding: 20px 24px;
-  border-bottom: 1px solid #334155;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .drawer-titulo {
@@ -283,7 +276,7 @@ sup a:hover {
 }
 
 .drawer-nav a:hover {
-  background-color: #26354a;
+  background-color: rgba(250, 204, 21, 0.1);
   color: #facc15;
   transform: translateX(5px);
 }
@@ -297,8 +290,8 @@ sup a:hover {
 
 .drawer-footer {
   padding: 18px 24px;
-  border-top: 1px solid #334155;
-  background-color: #162032;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
 }
 
 .drawer-footer .whatsapp {
@@ -320,8 +313,9 @@ body.menu-abierto {
     width: 46px;
   }
 }
+
 /* ============================================================
-   HERO DE INICIO (Estilo Premium coordinado con Donaciones)
+   HERO DE INICIO
    ============================================================ */
 .home-hero {
   display: flex;
@@ -343,7 +337,6 @@ body.menu-abierto {
   margin-bottom: 18px;
 }
 
-/* LOGO CIRCULAR CON RESPLANDOR (Restaurado a su tamaño original amplio) */
 .hero-logo {
   width: clamp(200px, 30vw, 320px);
   height: auto;
@@ -376,7 +369,6 @@ body.menu-abierto {
   }
 }
 
-/* Títulos Principales en todas las páginas (Doctrinas, Servicios, Alabanzas, Actividades) */
 .hero-titulo {
   font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 700;
@@ -404,7 +396,7 @@ body.menu-abierto {
   line-height: 1.6;
 }
 
-/* Buscador estándar (Páginas Interiores: Doctrinas, Servicios, Actividades, Alabanzas) */
+/* Buscador estándar */
 .buscador-contenedor {
   display: flex;
   justify-content: center;
@@ -521,26 +513,6 @@ textarea::placeholder {
   transform: translateY(-1px) !important;
 }
 
-.home-hero .buscador-contenedor .button {
-  background: #facc15;
-  color: #0f172a;
-  border: none;
-  border-radius: 50px;
-  padding: 12px 24px;
-  font-weight: 700;
-  font-size: 0.95rem;
-  cursor: pointer;
-  margin: 0;
-  transition: all 0.2s ease;
-  flex-shrink: 0;
-  white-space: nowrap;
-}
-
-.home-hero .buscador-contenedor .button:hover {
-  background: #eab308;
-  transform: translateY(-1px);
-}
-
 .section {
   padding: 60px 20px;
 }
@@ -585,12 +557,15 @@ a.button {
   text-decoration: none;
   display: inline-block;
   line-height: normal;
+  transition: all 0.2s ease;
 }
-.button:hover,
-.btn-donar-cta:hover {
+
+.button:hover {
+  background-color: #eab308;
   box-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
   transform: translateY(-2px);
 }
+
 .youtube {
   background-color: #dc2626;
   color: #ffffff;
@@ -654,7 +629,7 @@ a.button {
     0 12px 30px -10px rgba(0, 0, 0, 0.5),
     0 0 20px rgba(250, 204, 21, 0.15);
 }
-/* Agrega la clase 'card-destacada' a la tarjeta del domingo en tu HTML */
+
 .card.card-destacada {
   background: rgba(250, 204, 21, 0.06);
   border: 1px solid rgba(250, 204, 21, 0.35);
@@ -701,6 +676,7 @@ a.button {
   color: #94a3b8;
   font-size: 0.9rem;
   margin-top: 16px;
+  text-align: center;
 }
 
 /* ============================================================
@@ -795,12 +771,12 @@ a.button {
   }
 
   .titulo {
-    font-size: 1.35rem; /* Proporción ideal para teléfonos */
+    font-size: 1.35rem;
     white-space: nowrap;
   }
 
   .menu-drawer {
-    padding-top: 68px; /* Espacio para que ningún enlace quede tapado */
+    padding-top: 68px;
   }
 
   .section {
@@ -810,9 +786,23 @@ a.button {
   .hero-titulo {
     font-size: 1.5rem;
   }
+
+  .home-hero .buscador-contenedor {
+    padding: 4px 4px 4px 12px !important;
+  }
+
+  .home-hero .buscador-contenedor input[type="text"] {
+    font-size: 0.82rem !important;
+    padding: 6px 2px !important;
+  }
+
+  .home-hero .buscador-contenedor .button {
+    padding: 8px 12px !important;
+    font-size: 0.78rem !important;
+  }
 }
 
-/* Estilos para la ventana modal del reproductor */
+/* Modal del reproductor */
 .modal {
   display: none;
   position: fixed;
@@ -821,7 +811,7 @@ a.button {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(8px); /* Desenfoque elegante de fondo */
+  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 3000;
   justify-content: center;
@@ -875,7 +865,7 @@ a.button {
   height: 100%;
 }
 
-/* Estilos para el desglose de doctrinas */
+/* Doctrinas */
 .doctrinas-contenedor {
   max-width: 900px;
   margin: 0 auto;
@@ -894,6 +884,7 @@ a.button {
   overflow: hidden;
   transition: border-color 0.25s ease;
 }
+
 .doctrina-item:hover {
   border-color: rgba(250, 204, 21, 0.3);
 }
@@ -910,9 +901,11 @@ a.button {
   align-items: center;
   transition: background-color 0.2s ease;
 }
+
 .doctrina-item summary:hover {
   background-color: #26354a;
 }
+
 .doctrina-item summary::-webkit-details-marker {
   display: none;
 }
@@ -943,15 +936,14 @@ a.button {
   margin-left: 20px;
   margin-bottom: 12px;
 }
-/* Solo estiliza el número/viñeta si el <li> tiene un <h3> adentro */
+
 .doctrina-contenido ol > li:has(> h3)::marker,
 .doctrina-contenido ul > li:has(> h3)::marker {
   color: #facc15;
   font-weight: bold;
-  font-size: 1.17em; /* Tamaño equivalente al h3 */
+  font-size: 1.17em;
 }
 
-/* Caja destacada para pasajes bíblicos */
 .versiculo-box {
   background: rgb(0, 0, 0);
   border-left: 4px solid #facc15;
@@ -962,44 +954,41 @@ a.button {
 }
 
 .espacio-arriba {
-  margin-top: 16px; /* Ajusta los píxeles según el espacio que desees */
+  margin-top: 16px;
 }
 
-/* Espaciado de la lista principal */
 .lista-evidencias > li {
-  margin-bottom: 20px; /* Separa los puntos 2, 3, 4 entre sí */
+  margin-bottom: 20px;
   line-height: 1.6;
 }
 
-/* Sangría e interlineado para las sublistas (a, b, c...) */
 .lista-evidencias ol.sublista-letras,
 .lista-evidencias ol.sublista-tareas {
-  margin-left: 24px; /* Empuja las letras a la derecha */
+  margin-left: 24px;
   margin-top: 8px;
   margin-bottom: 12px;
 }
 
 .lista-evidencias ol.sublista-letras li,
 .lista-evidencias ol.sublista-tareas li {
-  margin-bottom: 6px; /* Separación entre a., b., c. */
+  margin-bottom: 6px;
 }
-/* Sangría para alinear listas principales con la posición de sublistas */
+
 .lista-evidencias.con-sangria {
   margin-left: 24px;
 }
 
-/* Párrafos de cierre/conclusión dentro de un punto */
 .lista-evidencias li > p:not(:first-child) {
   margin-top: 12px;
 }
-/* Hereda el mismo margen que una lista anidada en segundo nivel */
+
 .sublista-independiente {
   list-style-type: lower-alpha;
-  padding-left: 2.5rem; /* O el valor equivalente definido en .lista-evidencias */
+  padding-left: 2.5rem;
 }
 
 /* ============================================================
-   TARJETA CON CARRUSEL DE FONDOS (Estilo Elevation / Másvida)
+   TARJETAS Y CARRUSEL
    ============================================================ */
 .cards-actividades {
   display: flex;
@@ -1020,17 +1009,11 @@ a.button {
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* <--- ¡ESTO BAJA EL TEXTO Y EL BOTÓN HASTA ABAJO DEL TODO! */
+  justify-content: flex-end;
   text-align: left;
-  padding: 0; /* Quita el relleno viejo que lo desalineaba */
-}
-.tarjeta-evento.card {
-  width: 100%;
   padding: 0;
-  align-items: stretch;
 }
 
-/* Fotos de fondo */
 .carrusel-fondo {
   position: absolute;
   inset: 0;
@@ -1059,7 +1042,6 @@ a.button {
   transform: scale(1.03);
 }
 
-/* Sombra oscura que cubre bien la parte de abajo donde está el texto */
 .tarjeta-overlay {
   position: absolute;
   inset: 0;
@@ -1073,7 +1055,6 @@ a.button {
   z-index: 2;
 }
 
-/* Indicadores de puntitos arriba a la derecha */
 .carrusel-puntos {
   position: absolute;
   top: 20px;
@@ -1108,12 +1089,11 @@ a.button {
   border-radius: 12px;
 }
 
-/* Contenido abajo: Texto a la izquierda y Botón a la derecha */
 .tarjeta-cuerpo {
   position: relative;
   z-index: 3;
   width: 100%;
-  padding: 36px 40px; /* Buen espacio con respecto a los bordes inferiores */
+  padding: 36px 40px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -1137,33 +1117,30 @@ a.button {
   letter-spacing: 0.5px;
 }
 
-/* Título más grande y con más presencia */
 .tarjeta-titulo {
   color: #f8fafc;
-  font-size: 2.4rem; /* <-- Antes era 1.85rem, ahora tiene impacto */
+  font-size: 2.4rem;
   font-weight: 800;
   margin: 0 0 10px 0;
   line-height: 1.15;
   letter-spacing: -0.5px;
 }
 
-/* Descripción más grande y legible */
 .tarjeta-descripcion {
   color: #cbd5e1;
-  font-size: 1.12rem; /* <-- Letra más grande y cómoda de leer */
+  font-size: 1.12rem;
   line-height: 1.6;
   margin: 0;
   max-width: 680px;
 }
 
-/* Botón con mejor proporción */
 .btn-tarjeta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background-color: #f8fafc;
   color: #0f172a;
-  padding: 14px 32px; /* <-- Botón más cómodo */
+  padding: 14px 32px;
   border-radius: 9999px;
   font-weight: 700;
   font-size: 1rem;
@@ -1181,16 +1158,11 @@ a.button {
   box-shadow: 0 6px 18px rgba(250, 204, 21, 0.45);
 }
 
-/* ============================================================
-   AJUSTE DE TARJETAS Y CARRUSEL PARA CELULARES (max-width: 650px)
-   ============================================================ */
 @media (max-width: 650px) {
-  /* 1. Tarjeta con mejor altura y espacio */
   .tarjeta-evento {
     min-height: 420px;
   }
 
-  /* 2. Reserva 56px arriba para que el badge jamás choque con los puntos */
   .tarjeta-cuerpo {
     padding: 56px 18px 24px 18px;
     flex-direction: column;
@@ -1198,18 +1170,12 @@ a.button {
     gap: 10px;
   }
 
-  /* 3. Puntos del carrusel más compactos y pequeños en móviles */
   .carrusel-puntos {
     top: 12px;
     right: 14px;
     padding: 4px 8px;
     gap: 4px;
-    background: rgba(
-      15,
-      23,
-      42,
-      0.7
-    ); /* Fondo un poco más oscuro para mejor legibilidad */
+    background: rgba(15, 23, 42, 0.7);
   }
 
   .carrusel-puntos .punto {
@@ -1221,7 +1187,6 @@ a.button {
     width: 16px;
   }
 
-  /* 4. Badge amarillo adaptable */
   .badge-evento {
     font-size: 0.78rem;
     padding: 5px 12px;
@@ -1232,7 +1197,6 @@ a.button {
     word-break: break-word;
   }
 
-  /* 5. Título y descripción balanceados */
   .tarjeta-titulo {
     font-size: 1.4rem;
     margin-bottom: 6px;
@@ -1245,7 +1209,6 @@ a.button {
     color: #e2e8f0;
   }
 
-  /* 6. Botón full-width bien posicionado */
   .btn-tarjeta {
     width: 100%;
     margin-top: 12px;
@@ -1257,9 +1220,7 @@ a.button {
   }
 }
 
-/* -------------------------------------------------
-   Contador de visitas – Diseño moderno y atractivo
-   ------------------------------------------------- */
+/* Contador de visitas */
 .visit-counter-wrapper {
   display: flex;
   justify-content: center;
@@ -1294,14 +1255,8 @@ a.button {
   box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
 }
 
-/* Alineación y margen del copyright */
-.copy {
-  margin: 0;
-  text-align: center;
-}
-
 /* ============================================================
-   SECCIÓN DE DONACIONES (Inspirada en MásVida & Elevation)
+   SECCIÓN DE DONACIONES
    ============================================================ */
 .donaciones-hero {
   min-height: 55vh;
@@ -1372,7 +1327,6 @@ a.button {
   padding: 0 20px 80px;
 }
 
-/* Selector de Pestañas */
 .tabs-metodos {
   display: flex;
   background: rgba(255, 255, 255, 0.05);
@@ -1403,7 +1357,6 @@ a.button {
   border: 1px solid rgba(250, 204, 21, 0.3);
 }
 
-/* Paneles de Contenido */
 .panel-metodo {
   display: none;
   opacity: 0;
@@ -1426,9 +1379,6 @@ a.button {
   }
 }
 
-/* ============================================================
-   TARJETAS DE MÉTODOS DE DONACIÓN (Estilo Confesión de Fe)
-   ============================================================ */
 .card-banco {
   background: rgba(15, 23, 42, 0.65);
   backdrop-filter: blur(16px);
@@ -1455,7 +1405,6 @@ a.button {
   display: block;
 }
 
-/* Títulos con el amarillo característico de Confesión de Fe */
 .card-banco-info h3,
 .card-banco-full h3 {
   font-size: 1.15rem;
@@ -1464,7 +1413,6 @@ a.button {
   margin-bottom: 6px;
 }
 
-/* Texto blanco normal (#f8fafc) con buen interlineado */
 .card-banco-info p,
 .card-banco-full p {
   color: #f8fafc;
@@ -1509,9 +1457,8 @@ a.button {
 .link-btn {
   text-decoration: none;
 }
-/* ============================================================
-   CONTADOR INTERACTIVO (Dodge Field - Estilo Azul original)
-   ============================================================ */
+
+/* Dodge Field */
 .dodge-field {
   --df-height: 140px;
   --df-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
@@ -1592,7 +1539,7 @@ a.button {
   }
 }
 
-/* Efecto Gradient Wave / Aurora Celestial para index.html */
+/* Aurora Background */
 .aurora-bg {
   position: fixed;
   top: 0;
@@ -1666,9 +1613,8 @@ a.button {
     transform: translate(-60px, 100px) scale(0.9);
   }
 }
-/* ============================================================
-   SPOTLIGHT CARDS (Efecto resplandor que sigue al mouse)
-   ============================================================ */
+
+/* Spotlight Cards */
 .spotlight-card {
   position: relative;
   overflow: hidden;
@@ -1710,20 +1656,4 @@ a.button {
 .spotlight-card > * {
   position: relative;
   z-index: 2;
-}
-/* DESPUÉS: */
-@media (max-width: 480px) {
-  .home-hero .buscador-contenedor {
-    padding: 4px 4px 4px 12px;
-  }
-
-  .home-hero .buscador-contenedor input[type="text"] {
-    font-size: 0.82rem;
-    padding: 6px 2px;
-  }
-
-  .home-hero .buscador-contenedor .button {
-    padding: 9px 14px;
-    font-size: 0.8rem;
-  }
 }
