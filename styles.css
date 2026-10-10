@@ -752,11 +752,31 @@ a.button {
   #form-buscador .button:hover {
     background-color: #eab308;
   }
+
+  /* --- OPTIMIZACIÓN DE RENDIMIENTO EN MÓVILES --- */
+  .aurora-blob {
+    animation: none !important;
+    filter: blur(35px) !important;
+    opacity: 0.35 !important;
+  }
+
+  .aurora-blob-3 {
+    display: none !important;
+  }
+
+  .card,
+  .doctrina-item,
+  .card-banco,
+  .tarjeta-evento {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background-color: rgba(15, 23, 42, 0.92) !important;
+  }
 }
 
 /* ============================================================
-   CELULARES (Hasta 480px)
-   ============================================================ */
+     CELULARES (Hasta 480px) - (¡Este se queda intacto!)
+     ============================================================ */
 @media (max-width: 480px) {
   .header {
     padding: 10px 14px;
@@ -1537,7 +1557,9 @@ a.button {
   }
 }
 
-/* Aurora Background */
+/* ============================================================
+   AURORA BACKGROUND (Optimizado para GPU)
+   ============================================================ */
 .aurora-bg {
   position: fixed;
   top: 0;
@@ -1548,6 +1570,7 @@ a.button {
   overflow: hidden;
   pointer-events: none;
   background: linear-gradient(135deg, #0b1329 0%, #0f172a 50%, #1e1b4b 100%);
+  contain: strict; /* Le indica al navegador que no afecte el layout principal */
 }
 
 .aurora-blob {
@@ -1557,7 +1580,7 @@ a.button {
   border-radius: 50%;
   animation: floatAurora 18s ease-in-out infinite alternate;
   will-change: transform;
-  transform: translateZ(0);
+  transform: translate3d(0, 0, 0); /* Forzado de aceleración por hardware */
 }
 
 .aurora-blob-1 {
@@ -1602,13 +1625,13 @@ a.button {
 
 @keyframes floatAurora {
   0% {
-    transform: translate(0px, 0px) scale(1);
+    transform: translate3d(0px, 0px, 0) scale(1);
   }
   50% {
-    transform: translate(80px, 60px) scale(1.15);
+    transform: translate3d(80px, 60px, 0) scale(1.15);
   }
   100% {
-    transform: translate(-60px, 100px) scale(0.9);
+    transform: translate3d(-60px, 100px, 0) scale(0.9);
   }
 }
 
