@@ -184,7 +184,7 @@ function buscar() {
   }
 }
 
-// --- CARRUSEL AUTOMÁTICO DE FONDOS (actividades.html) ---
+// --- CARRUSEL AUTOMÁTICO DE FONDOS (OPTIMIZADO) ---
 document.addEventListener("DOMContentLoaded", () => {
   const tarjetasCarrusel = document.querySelectorAll(".tarjeta-evento");
 
@@ -195,18 +195,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if (imagenesCarrusel.length > 0) {
       let indiceActual = 0;
       let temporizador = null;
-      const TIEMPO_FOTO = 3000; // 3 segundos por foto
+      const TIEMPO_FOTO = 3000;
 
       const cambiarFoto = (nuevoIndice) => {
-        // Apagar solo las fotos y puntos de ESTA tarjeta
         imagenesCarrusel.forEach((img) => img.classList.remove("activa"));
         puntosCarrusel.forEach((pto) => pto.classList.remove("activo"));
 
-        // Calcular índice correcto (loop)
         indiceActual =
           (nuevoIndice + imagenesCarrusel.length) % imagenesCarrusel.length;
 
-        // Activar la foto y el punto correspondiente
         if (imagenesCarrusel[indiceActual]) {
           imagenesCarrusel[indiceActual].classList.add("activa");
         }
@@ -215,25 +212,44 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       };
 
-      const siguienteFoto = () => {
-        cambiarFoto(indiceActual + 1);
+      const siguienteFoto = () => cambiarFoto(indiceActual + 1);
+
+      const iniciar = () => {
+        if (!temporizador)
+          temporizador = setInterval(siguienteFoto, TIEMPO_FOTO);
       };
 
-      const reiniciarTemporizador = () => {
-        if (temporizador) clearInterval(temporizador);
-        temporizador = setInterval(siguienteFoto, TIEMPO_FOTO);
+      const detener = () => {
+        if (temporizador) {
+          clearInterval(temporizador);
+          temporizador = null;
+        }
       };
 
-      // Iniciar en la primera foto
+      // Solo gira si la tarjeta está visible en la pantalla
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              iniciar();
+            } else {
+              detener();
+            }
+          });
+        },
+        { threshold: 0.2 },
+      );
+
+      observer.observe(tarjeta);
+
       cambiarFoto(0);
-      reiniciarTemporizador();
 
-      // Clics en los puntitos de esta tarjeta
       puntosCarrusel.forEach((punto, index) => {
         punto.addEventListener("click", (e) => {
           e.stopPropagation();
           cambiarFoto(index);
-          reiniciarTemporizador();
+          detener();
+          iniciar();
         });
       });
     }
