@@ -259,30 +259,34 @@ document.addEventListener("DOMContentLoaded", () => {
 // -------------------------------------------------
 // Contador de visitas permanente (Cloudflare Workers + KV)
 // -------------------------------------------------
-// Contador de visitas – una visita por dispositivo (Optimizado)
-// -------------------------------------------------
 window.addEventListener("load", () => {
-  const API_BASE = "https://visit-counter.ploes-3712.workers.dev/count";
+  const API_URL = "https://visit-counter.ploes-3712.workers.dev/count";
   const contadorEl = document.getElementById("visit-count");
-  const LOCAL_KEY = "has-visited";
 
-  const yaVisitado = localStorage.getItem(LOCAL_KEY) === "true";
-  const apiUrl = yaVisitado ? `${API_BASE}?inc=0` : `${API_BASE}?inc=1`;
-
-  fetch(apiUrl)
-    .then((r) => r.json())
+  fetch(API_URL, {
+    method: "POST",
+  })
+    .then((r) => {
+      if (!r.ok) throw new Error(`Error en el servidor: ${r.status}`);
+      return r.json();
+    })
     .then((data) => {
-      if (contadorEl)
+      if (contadorEl) {
         contadorEl.textContent = Number(data.value).toLocaleString();
-      if (!yaVisitado) localStorage.setItem(LOCAL_KEY, "true");
+      }
+
+      // Uso seguro de localStorage para guardar metadatos de última visita (modo privado amigable)
+      try {
+        localStorage.setItem("elim_last_visit", Date.now().toString());
+      } catch (e) {
+        // Ignorado si el navegador bloquea el almacenamiento local
+      }
     })
     .catch((err) => {
-      console.warn("Contador falló → fallback local", err);
-      const local = Number(localStorage.getItem("visit-count-fallback")) || 0;
-      const nuevo = local + 1;
-      localStorage.setItem("visit-count-fallback", nuevo);
-      if (contadorEl)
-        contadorEl.textContent = `${nuevo.toLocaleString()} (local)`;
+      console.warn("No se pudo obtener el contador de visitas:", err);
+      if (contadorEl) {
+        contadorEl.textContent = "—"; // Fallo limpio sin datos inventados
+      }
     });
 });
 // ============================================================
