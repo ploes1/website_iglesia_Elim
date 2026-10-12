@@ -167,6 +167,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=BQc4xgBwHPg",
   },
   {
+    titulo: "Nadie Pudo Amarme Como Cristo",
+    artista: "Manuel Bonilla",
+    url: "https://www.youtube.com/watch?v=-Lp0_bby3g0",
+  },
+  {
     titulo: "Soy Deudor",
     artista: "Juan Carlos Alvarado",
     url: "https://www.youtube.com/watch?v=YdmYaSFwprs",
