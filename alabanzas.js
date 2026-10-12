@@ -237,6 +237,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=mVXfHb8nRLQ",
   },
   {
+    titulo: "Por Amor",
+    artista: "Los Voceros de Cristo",
+    url: "https://www.youtube.com/watch?v=EmGu30rumoc",
+  },
+  {
     titulo: "Maravilloso es el Señor Jesús (Versión)",
     artista: "Dominio público",
     url: "https://www.youtube.com/watch?v=J1yEsnCWvrE",
