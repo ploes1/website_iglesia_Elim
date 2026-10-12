@@ -252,6 +252,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=SB-PFvb59sw",
   },
   {
+    titulo: "Gózate delante del Señor (Versión)",
+    artista: "Dominio público",
+    url: "https://www.youtube.com/watch?v=cBX8YN18lFQ",
+  },
+  {
     titulo: "Qué bueno es el Señor (Versión)",
     artista: "Dominio público",
     url: "https://www.youtube.com/watch?v=x2HfLK0Fv54",
