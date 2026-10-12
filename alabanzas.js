@@ -157,6 +157,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=v-IQmf4sarY",
   },
   {
+    titulo: "Digno Eres",
+    artista: "Joel Ruano",
+    url: "https://www.youtube.com/watch?v=umrp6UBVj0U",
+  },
+  {
     titulo: "Quiero Darte Adoración",
     artista: "Joel Ruano",
     url: "https://www.youtube.com/watch?v=BQc4xgBwHPg",
@@ -305,6 +310,11 @@ const alabanzas = [
     titulo: "Yo me alegré (Yo iré) (Versión)",
     artista: "Dominio público",
     url: "https://www.youtube.com/watch?v=LFhY4sweVhM",
+  },
+  {
+    titulo: "Amémonos de corazón (Versión)",
+    artista: "Dominio público",
+    url: "https://www.youtube.com/watch?v=tDsFiU-sfYg",
   },
 ];
 
