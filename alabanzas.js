@@ -122,6 +122,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=uaEaX7p4Wq0",
   },
   {
+    titulo: "El Señor es mi Rey (Versión)",
+    artista: "Miel San Marcos ft. Tony Pérez",
+    url: "https://www.youtube.com/watch?v=SR5dXX_eKCU",
+  },
+  {
     titulo: "Levanto Mis Manos",
     artista: "Samuel Hernandez",
     url: "https://www.youtube.com/watch?v=iM49tkRfJZs",
@@ -157,11 +162,6 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=v-IQmf4sarY",
   },
   {
-    titulo: "Digno Eres",
-    artista: "Joel Ruano",
-    url: "https://www.youtube.com/watch?v=umrp6UBVj0U",
-  },
-  {
     titulo: "Quiero Darte Adoración",
     artista: "Joel Ruano",
     url: "https://www.youtube.com/watch?v=BQc4xgBwHPg",
@@ -170,6 +170,11 @@ const alabanzas = [
     titulo: "Soy Deudor",
     artista: "Juan Carlos Alvarado",
     url: "https://www.youtube.com/watch?v=YdmYaSFwprs",
+  },
+  {
+    titulo: "Digno Eres",
+    artista: "Joel Ruano",
+    url: "https://www.youtube.com/watch?v=umrp6UBVj0U",
   },
   {
     titulo: "Aleluya/Te Adoramos",
