@@ -272,6 +272,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=SB-PFvb59sw",
   },
   {
+    titulo: "He decidido seguir a Cristo (Versión)",
+    artista: "Dominio público",
+    url: "https://www.youtube.com/watch?v=WHVAa74cXjM",
+  },
+  {
     titulo: "Gózate delante del Señor (Versión)",
     artista: "Dominio público",
     url: "https://www.youtube.com/watch?v=cBX8YN18lFQ",
