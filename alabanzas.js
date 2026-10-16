@@ -257,14 +257,14 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=EmGu30rumoc",
   },
   {
+    titulo: "Gozo (Aunque Lo Llamen Locura) + Coritos (Versión)",
+    artista: "Dominio público",
+    url: "https://www.youtube.com/watch?v=WsEM0fnuRvE",
+  },
+  {
     titulo: "Maravilloso es el Señor Jesús (Versión)",
     artista: "Dominio público",
     url: "https://www.youtube.com/watch?v=J1yEsnCWvrE",
-  },
-  {
-    titulo: "No hay Dios tan grande como Tú (Versión)",
-    artista: "Dominio público",
-    url: "https://www.youtube.com/watch?v=9xNjDak3iy0",
   },
   {
     titulo: "Espíritu de Dios (Versión)",
