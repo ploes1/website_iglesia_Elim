@@ -202,6 +202,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=iv7xzjdH-HI",
   },
   {
+    titulo: "Mereces la Gloria",
+    artista: "Luigi Castro",
+    url: "https://www.youtube.com/watch?v=r84T0l-_G3U",
+  },
+  {
     titulo: "Él Me Levantará",
     artista: "Tony Pérez",
     url: "https://www.youtube.com/watch?v=J1XnzpLqbG8",
@@ -230,6 +235,11 @@ const alabanzas = [
     titulo: "Aquí estoy",
     artista: "Jaime Murrell",
     url: "https://www.youtube.com/watch?v=VBj0DM5wDiQ",
+  },
+  {
+    titulo: "Si, Él Volverá",
+    artista: "Oscar Medina",
+    url: "https://www.youtube.com/watch?v=7bijDoHQhzM",
   },
   {
     titulo: "Canta Aleluya (Versión)",
