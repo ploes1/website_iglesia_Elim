@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- BUSCADOR EN TIEMPO REAL (actividades.html) ---
+  // --- BUSCADOR EN TIEMPO REAL (actividades.html y servicios.html) ---
   const inputActividades = document.getElementById("input-busqueda");
   const cardsActividades = document.querySelectorAll(
     ".cards-actividades .card, .cards .card",
@@ -66,38 +66,45 @@ document.addEventListener("DOMContentLoaded", () => {
   const mensajeError = document.getElementById("mensaje-error");
 
   if (inputActividades) {
+    let debounceTimer = null;
+
     inputActividades.addEventListener("input", (e) => {
-      const texto = e.target.value
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .trim();
+      clearTimeout(debounceTimer);
 
-      let coincidencias = 0;
-
-      cardsActividades.forEach((card) => {
-        const contenido = card.textContent
+      // Espera 150ms a que termine de teclear antes de filtrar en pantalla
+      debounceTimer = setTimeout(() => {
+        const texto = e.target.value
           .toLowerCase()
           .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "");
+          .replace(/[\u0300-\u036f]/g, "")
+          .trim();
 
-        if (contenido.includes(texto)) {
-          card.style.display = "";
-          coincidencias++;
-        } else {
-          card.style.display = "none";
-        }
-      });
+        let coincidencias = 0;
 
-      // Mostrar mensaje de aviso si no hay resultados
-      if (mensajeError) {
-        if (coincidencias === 0 && texto !== "") {
-          mensajeError.textContent =
-            "No se encontraron actividades con esa búsqueda.";
-        } else {
-          mensajeError.textContent = "";
+        cardsActividades.forEach((card) => {
+          const contenido = card.textContent
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+
+          if (contenido.includes(texto)) {
+            card.style.display = "";
+            coincidencias++;
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+        // Mostrar u ocultar mensaje amigable si no hay resultados
+        if (mensajeError) {
+          if (coincidencias === 0 && texto !== "") {
+            mensajeError.textContent =
+              "No se encontraron resultados con esa búsqueda.";
+          } else {
+            mensajeError.textContent = "";
+          }
         }
-      }
+      }, 150);
     });
   }
 

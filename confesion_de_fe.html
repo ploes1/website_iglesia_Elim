@@ -8500,37 +8500,47 @@
     </footer>
     <script src="script.js"></script>
     <script>
-      const inputBuscador = document.getElementById("buscador-doctrinas");
-      const doctrinas = document.querySelectorAll(".doctrina-item");
+      document.addEventListener("DOMContentLoaded", () => {
+        const inputBuscador = document.getElementById("buscador-doctrinas");
+        if (!inputBuscador) return;
 
-      inputBuscador.addEventListener("input", (e) => {
-        const busqueda = e.target.value
-          .toLowerCase()
-          .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "")
-          .trim();
+        const doctrinas = document.querySelectorAll(".doctrina-item");
 
-        doctrinas.forEach((item) => {
-          const texto = item.textContent
+        // 1. Guardamos el texto en memoria al cargar la página (solo se ejecuta 1 vez)
+        const itemsCache = Array.from(doctrinas).map((item) => ({
+          elemento: item,
+          texto: item.textContent
             .toLowerCase()
             .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "");
+            .replace(/[\u0300-\u036f]/g, ""),
+        }));
 
-          if (texto.includes(busqueda)) {
-            item.style.display = "";
-            // Si el usuario escribe algo concreto, abre la doctrina para ver el resultado
-            if (busqueda.length > 2) {
-              item.open = true;
-            }
-          } else {
-            item.style.display = "none";
-          }
+        let timeoutBusqueda = null;
+
+        inputBuscador.addEventListener("input", (e) => {
+          clearTimeout(timeoutBusqueda);
+          // 2. Debounce: Espera 150ms tras la última tecla para buscar suavemente
+          timeoutBusqueda = setTimeout(() => {
+            const busqueda = e.target.value
+              .toLowerCase()
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "")
+              .trim();
+
+            itemsCache.forEach(({ elemento, texto }) => {
+              if (busqueda === "" || texto.includes(busqueda)) {
+                elemento.style.display = "";
+                if (busqueda.length > 2) {
+                  elemento.open = true;
+                } else if (busqueda === "") {
+                  elemento.open = false;
+                }
+              } else {
+                elemento.style.display = "none";
+              }
+            });
+          }, 150);
         });
-
-        // Si borra la búsqueda, vuelve a cerrar las doctrinas
-        if (busqueda === "") {
-          doctrinas.forEach((item) => (item.open = false));
-        }
       });
     </script>
   </body>
