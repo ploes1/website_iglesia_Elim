@@ -270,41 +270,70 @@ sup a:hover {
   color: #0f172a;
 }
 
+/* ============================================================
+   NAVEGACIÓN DEL DRAWER (Iconos lineales y alineación moderna)
+   ============================================================ */
 .drawer-nav {
-  padding: 20px 16px;
+  padding: 16px 14px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   flex-grow: 1;
   background: #0f172a !important;
 }
 
 .drawer-nav a {
-  color: #f8fafc;
+  color: #94a3b8;
   text-decoration: none;
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 500;
-  padding: 12px 18px;
-  border-radius: 8px;
-  transition: all 0.2s ease;
+  padding: 11px 16px;
+  border-radius: 10px;
+  transition: all 0.22s ease;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 14px; /* Espacio uniforme entre el icono y el texto */
+  text-align: left;
 }
 
+/* Iconos SVG a la izquierda */
+.drawer-nav a .nav-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition:
+    transform 0.2s ease,
+    stroke 0.2s ease;
+}
+
+/* Efecto al pasar el cursor (Hover) */
 .drawer-nav a:hover {
-  background-color: rgba(250, 204, 21, 0.1);
+  background-color: rgba(250, 204, 21, 0.08);
   color: #facc15;
-  transform: translateX(5px);
+  transform: translateX(4px);
 }
 
+.drawer-nav a:hover .nav-icon {
+  transform: scale(1.12);
+  stroke: #facc15;
+}
+
+/* Página Activa */
 .drawer-nav a.active {
   background-color: rgba(250, 204, 21, 0.15);
   color: #facc15;
-  font-weight: 700;
+  font-weight: 600;
   border-left: 4px solid #facc15;
 }
 
+.drawer-nav a.active .nav-icon {
+  stroke: #facc15;
+}
 .drawer-footer {
   padding: 18px 24px;
   border-top: none !important;
@@ -1695,4 +1724,88 @@ a.button {
 .spotlight-card > * {
   position: relative;
   z-index: 2;
+}
+/* ============================================================
+   FILA DE REDES SOCIALES (Estilo Elevation Church - Tamaño Fijo)
+   ============================================================ */
+.social-links-row {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  margin: 12px 0 !important;
+  flex-wrap: nowrap !important;
+}
+
+/* En el menú lateral (drawer) se alinean a la izquierda */
+.drawer-footer .social-links-row {
+  justify-content: flex-start !important;
+  margin: 8px 0 0 0 !important;
+}
+
+/* Forzar círculos perfectos de 40px para que NUNCA se deformen */
+.social-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  min-width: 40px !important;
+  max-width: 40px !important;
+  height: 40px !important;
+  min-height: 40px !important;
+  max-height: 40px !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: rgba(30, 41, 59, 0.7) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #f8fafc !important;
+  text-decoration: none !important;
+  transition: all 0.25s ease !important;
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
+}
+
+.social-btn svg {
+  width: 19px !important;
+  height: 19px !important;
+  fill: currentColor !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+  transition: transform 0.2s ease !important;
+}
+
+.social-btn:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35) !important;
+}
+
+.social-btn:hover svg {
+  transform: scale(1.1) !important;
+}
+
+/* Colores de marca individuales en hover */
+.social-btn.btn-facebook:hover {
+  background: rgba(24, 119, 242, 0.25) !important;
+  border-color: #1877f2 !important;
+  color: #60a5fa !important;
+}
+
+.social-btn.btn-instagram:hover {
+  background: rgba(249, 75, 133, 0.25) !important;
+  border-color: #e1306c !important;
+  color: #f472b6 !important;
+}
+
+.social-btn.btn-whatsapp:hover {
+  background: rgba(37, 211, 102, 0.25) !important;
+  border-color: #25d366 !important;
+  color: #4ade80 !important;
+}
+
+.social-btn.btn-youtube:hover {
+  background: rgba(255, 0, 0, 0.25) !important;
+  border-color: #ff0000 !important;
+  color: #f87171 !important;
 }
