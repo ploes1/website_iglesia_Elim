@@ -1,6 +1,11 @@
 // 1. Lista de canciones (agrega aquí todas las que necesites)
 const alabanzas = [
   {
+    titulo: "CRISTO",
+    artista: "Miel San Marcos",
+    url: "https://www.youtube.com/watch?v=RIYZpm-NxWM",
+  },
+  {
     titulo: "Purifícame (Versión)",
     artista: "Francheska Morales ft. Ricky & Ryan X Miel San Marcos",
     url: "https://www.youtube.com/watch?v=inWU1vzW2Ms",
