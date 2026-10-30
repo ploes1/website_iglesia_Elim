@@ -1809,3 +1809,33 @@ a.button {
   border-color: #ff0000 !important;
   color: #f87171 !important;
 }
+/* Enlace hacia el footer dentro de drawer-footer */
+.drawer-footer-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  margin-bottom: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.drawer-footer-link:hover {
+  color: #38bdf8;
+  transform: translateY(2px);
+}
+
+.drawer-footer-link .icon-down {
+  transition: transform 0.2s ease;
+}
+
+.drawer-footer-link:hover .icon-down {
+  transform: translateY(2px);
+}
