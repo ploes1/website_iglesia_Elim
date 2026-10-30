@@ -132,6 +132,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=22X_ufAJJLY",
   },
   {
+    titulo: "Escalando peldaños (Versión)",
+    artista: "Vida Real Worship",
+    url: "https://www.youtube.com/watch?v=26sttHklI4s",
+  },
+  {
     titulo: "El Señor es mi Rey (Versión)",
     artista: "Miel San Marcos ft. Tony Pérez",
     url: "https://www.youtube.com/watch?v=SR5dXX_eKCU",
