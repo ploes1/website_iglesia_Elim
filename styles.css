@@ -210,7 +210,7 @@ sup a:hover {
   bottom: 0;
   width: 320px;
   max-width: 85vw;
-  background: #0f172a; /* Fondo sólido uniforme */
+  background: #0f172a;
   border-left: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: -10px 0 35px rgba(0, 0, 0, 0.6);
   z-index: 2000;
@@ -219,7 +219,8 @@ sup a:hover {
   display: flex;
   flex-direction: column;
   text-align: left;
-  overflow-y: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden; /* Mantiene la estructura del contenedor fija */
   padding-top: 85px;
 }
 
@@ -274,12 +275,44 @@ sup a:hover {
    NAVEGACIÓN DEL DRAWER (Iconos lineales y alineación moderna)
    ============================================================ */
 .drawer-nav {
-  padding: 16px 14px;
+  padding: 20px 16px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   flex-grow: 1;
+  min-height: 0; /* Imprescindible en flexbox para permitir scroll interno */
   background: #0f172a !important;
+
+  /* Scroll táctil fluido */
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain; /* Evita que al llegar al tope se mueva el fondo */
+
+  /* Scrollbar estándar moderno (Firefox / navegadores modernos) */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(250, 204, 21, 0.45) rgba(255, 255, 255, 0.05);
+}
+
+/* Scrollbar visible en móviles (Safari iOS, Chrome Android, WebKit) */
+.drawer-nav::-webkit-scrollbar {
+  width: 5px;
+  display: block; /* Obliga al navegador móvil a mostrarla */
+}
+
+.drawer-nav::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+}
+
+.drawer-nav::-webkit-scrollbar-thumb {
+  background: rgba(250, 204, 21, 0.4); /* Tono dorado tenue */
+  border-radius: 8px;
+}
+
+.drawer-nav::-webkit-scrollbar-thumb:hover,
+.drawer-nav::-webkit-scrollbar-thumb:active {
+  background: #facc15; /* Dorado brillante al presionar/arrastrar */
 }
 
 .drawer-nav a {
@@ -355,6 +388,7 @@ sup a:hover {
   padding: 18px 24px;
   border-top: none !important;
   background: #0f172a !important;
+  flex-shrink: 0; /* Evita que los iconos sociales inferiores se aplasten */
 }
 .drawer-footer .whatsapp {
   margin: 0;
