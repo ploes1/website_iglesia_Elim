@@ -11,8 +11,15 @@
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("js", new Date());
 
+      // 1. Leer decisión previa o denegar por defecto
+      var savedConsent = localStorage.getItem("cookie_consent_elim");
+      gtag("consent", "default", {
+        analytics_storage: savedConsent === "granted" ? "granted" : "denied",
+        ad_storage: "denied",
+      });
+
+      gtag("js", new Date());
       gtag("config", "G-246X3Z84NS");
     </script>
     <meta charset="UTF-8" />
