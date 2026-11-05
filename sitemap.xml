@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Página de Inicio -->
+  <url>
+    <loc>https://ploes1.github.io/website_iglesia_Elim/index.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Actividades -->
+  <url>
+    <loc>https://ploes1.github.io/website_iglesia_Elim/actividades.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Horarios y Servicios -->
+  <url>
+    <loc>https://ploes1.github.io/website_iglesia_Elim/servicios.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Alabanzas -->
+  <url>
+    <loc>https://ploes1.github.io/website_iglesia_Elim/alabanzas.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Confesión de Fe -->
+  <url>
+    <loc>https://ploes1.github.io/website_iglesia_Elim/confesion_de_fe.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Donaciones -->
+  <url>
+    <loc>https://ploes1.github.io/website_iglesia_Elim/donaciones.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Páginas Legales -->
+  <url>
+    <loc>https://ploes1.github.io/website_iglesia_Elim/privacy.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://ploes1.github.io/website_iglesia_Elim/terms.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

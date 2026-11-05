@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Ubicación del mapa del sitio web
+Sitemap: https://ploes1.github.io/website_iglesia_Elim/sitemap.xml

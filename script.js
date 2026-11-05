@@ -453,3 +453,131 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+/* ============================================================
+   BANNER DE COOKIES Y GESTIÓN DE PRIVACIDAD (GA4)
+   ============================================================ */
+document.addEventListener("DOMContentLoaded", function () {
+  const CONSENT_KEY = "cookie_consent_elim";
+  const userChoice = localStorage.getItem(CONSENT_KEY);
+
+  // 1. Configuración por defecto de Google Consent Mode (Denegado hasta que el usuario decida)
+  if (typeof gtag === "function") {
+    gtag("consent", "default", {
+      analytics_storage: userChoice === "granted" ? "granted" : "denied",
+      ad_storage: "denied",
+    });
+  }
+
+  // Si ya tomó una decisión previa, no mostramos el banner
+  if (userChoice) return;
+
+  // 2. Construcción visual del Banner
+  const banner = document.createElement("div");
+  banner.id = "cookie-consent-bar";
+  banner.setAttribute("role", "dialog");
+  banner.setAttribute("aria-label", "Consentimiento de cookies");
+  banner.innerHTML = `
+    <style>
+      #cookie-consent-bar {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 32px);
+        max-width: 680px;
+        background: rgba(15, 23, 42, 0.94);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(250, 204, 21, 0.3);
+        border-radius: 16px;
+        padding: 18px 24px;
+        color: #f8fafc;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        z-index: 9999;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+        animation: cookieSlideUp 0.35s ease-out;
+      }
+      @keyframes cookieSlideUp {
+        from { transform: translate(-50%, 40px); opacity: 0; }
+        to { transform: translate(-50%, 0); opacity: 1; }
+      }
+      #cookie-consent-bar p {
+        margin: 0;
+        font-size: 0.92rem;
+        line-height: 1.5;
+        flex: 1 1 300px;
+        color: #cbd5e1;
+      }
+      #cookie-consent-bar a {
+        color: #facc15;
+        text-decoration: underline;
+      }
+      .cookie-buttons {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .btn-cookie-accept, .btn-cookie-reject {
+        font-size: 0.88rem;
+        font-weight: 600;
+        padding: 8px 18px;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .btn-cookie-accept {
+        background: #facc15;
+        color: #0b1329;
+        border: none;
+      }
+      .btn-cookie-accept:hover {
+        background: #eab308;
+        transform: translateY(-1px);
+      }
+      .btn-cookie-reject {
+        background: transparent;
+        color: #94a3b8;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .btn-cookie-reject:hover {
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+    </style>
+    <p>
+      Usamos cookies básicas y estadísticas para analizar las visitas y mejorar nuestro sitio web. 
+      Consulta nuestra <a href="privacy.html">Política de Privacidad</a>.
+    </p>
+    <div class="cookie-buttons">
+      <button type="button" class="btn-cookie-reject" id="btn-reject-cookies">Rechazar</button>
+      <button type="button" class="btn-cookie-accept" id="btn-accept-cookies">Aceptar</button>
+    </div>
+  `;
+
+  document.body.appendChild(banner);
+
+  // 3. Manejadores de eventos
+  document
+    .getElementById("btn-accept-cookies")
+    .addEventListener("click", function () {
+      localStorage.setItem(CONSENT_KEY, "granted");
+      if (typeof gtag === "function") {
+        gtag("consent", "update", { analytics_storage: "granted" });
+      }
+      banner.remove();
+    });
+
+  document
+    .getElementById("btn-reject-cookies")
+    .addEventListener("click", function () {
+      localStorage.setItem(CONSENT_KEY, "denied");
+      if (typeof gtag === "function") {
+        gtag("consent", "update", { analytics_storage: "denied" });
+      }
+      banner.remove();
+    });
+});

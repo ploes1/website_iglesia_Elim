@@ -1890,3 +1890,119 @@ a.button {
 .drawer-footer-link:hover .icon-down {
   transform: translateY(2px);
 }
+
+/* ============================================================
+   PÁGINAS LEGALES (Políticas de Privacidad y Términos de Uso)
+   ============================================================ */
+.legal-main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px 80px 20px;
+  background: radial-gradient(circle at 50% 10%, #1e293b 0%, #0b1329 80%);
+}
+
+.legal-container {
+  max-width: 860px;
+  width: 100%;
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: left;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  color: #f8fafc;
+}
+
+@media (max-width: 640px) {
+  .legal-container {
+    padding: 24px 18px;
+  }
+}
+
+/* Botón flotante para volver */
+.legal-nav-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.25s ease;
+}
+
+.legal-nav-back:hover {
+  color: #facc15;
+  border-color: rgba(250, 204, 21, 0.4);
+  transform: translateX(-4px);
+}
+
+.legal-container h1 {
+  font-size: 2.1rem;
+  color: #facc15;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.legal-updated {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 16px;
+}
+
+.legal-container h2 {
+  font-size: 1.3rem;
+  color: #38bdf8;
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+
+.legal-container p {
+  color: #cbd5e1;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.legal-container ul,
+.legal-container ol {
+  color: #cbd5e1;
+  padding-left: 24px;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.legal-container li {
+  margin-bottom: 8px;
+}
+
+.legal-container a {
+  color: #facc15;
+  text-decoration: underline;
+  transition: opacity 0.2s;
+}
+
+.legal-container a:hover {
+  opacity: 0.85;
+}
+
+/* Bloque destacado para avisos clave */
+.legal-notice-box {
+  background: rgba(14, 165, 233, 0.1);
+  border-left: 4px solid #0ea5e9;
+  padding: 14px 18px;
+  border-radius: 0 12px 12px 0;
+  margin: 20px 0;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+}
