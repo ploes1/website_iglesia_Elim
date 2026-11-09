@@ -177,6 +177,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=v-IQmf4sarY",
   },
   {
+    titulo: "Dios El Más Grande",
+    artista: "Juan Carlos Alvarado",
+    url: "https://www.youtube.com/watch?v=MMGUo2xmmEY",
+  },
+  {
     titulo: "Quiero Darte Adoración",
     artista: "Joel Ruano",
     url: "https://www.youtube.com/watch?v=BQc4xgBwHPg",
