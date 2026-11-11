@@ -71,19 +71,83 @@
           alt="Logo Iglesia Elim"
           class="logo"
         />
-        <h1 class="titulo shiny-text">Iglesia Elim</h1>
+        <h1 class="titulo shiny-text">Iglesia Elim Jesucristo Te Ama</h1>
       </div>
-      <!-- Botón Hamburguesa a la derecha -->
-      <button
-        class="menu-hbtn"
-        id="btn-menu"
-        aria-label="Abrir menú"
-        aria-expanded="false"
-      >
-        <span class="hbtn-line"></span>
-        <span class="hbtn-line"></span>
-        <span class="hbtn-line"></span>
-      </button>
+      <!-- Acciones a la derecha: Botón Celestial + Menú Hamburguesa -->
+      <div class="header-actions">
+        <!-- BOTÓN INTERACTIVO SOL / LUNA -->
+        <button
+          class="theme-toggle-btn"
+          id="theme-toggle"
+          aria-label="Cambiar entre modo día y noche"
+          title="Alternar Día / Noche"
+        >
+          <div class="celestial-orbit">
+            <!-- Icono Luna (Modo Oscuro) -->
+            <svg
+              class="icon-moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+            >
+              <path
+                d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                fill="currentColor"
+              />
+              <circle
+                cx="17"
+                cy="6"
+                r="1.5"
+                fill="#facc15"
+                class="star-sparkle star-1"
+              />
+              <circle
+                cx="19"
+                cy="10"
+                r="1"
+                fill="#facc15"
+                class="star-sparkle star-2"
+              />
+            </svg>
+            <!-- Icono Sol (Modo Claro) -->
+            <svg
+              class="icon-sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+            >
+              <circle cx="12" cy="12" r="5" fill="currentColor" />
+              <g
+                class="sun-rays"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              >
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+              </g>
+            </svg>
+          </div>
+        </button>
+
+        <!-- Botón Hamburguesa a la derecha -->
+        <button
+          class="menu-hbtn"
+          id="btn-menu"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <span class="hbtn-line"></span>
+          <span class="hbtn-line"></span>
+          <span class="hbtn-line"></span>
+        </button>
+      </div>
     </header>
 
     <!-- Overlay oscuro con desenfoque de fondo -->
@@ -169,7 +233,7 @@
           <span>Confesión de Fe</span>
         </a>
 
-        <!-- 7. Servicios (Comunidad / Iglesia) -->
+        <!-- 7. Servicios para Niños (Comunidad / Iglesia) -->
         <a href="servicios.html">
           <svg class="nav-icon" viewBox="0 0 24 24">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -177,7 +241,7 @@
             <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
           </svg>
-          <span>Servicios</span>
+          <span>Servicios para Niños</span>
         </a>
 
         <!-- 8. Donaciones (Corazón / Ofrenda) -->
@@ -283,7 +347,7 @@
       />
 
       <h2 class="hero-titulo">
-        La Iglesia Elim "Jesucristo Te Ama" te da la bienvenida
+        Iglesia Elim Jesucristo Te Ama te da la bienvenida
       </h2>
       <p class="hero-subtitulo">
         Un lugar de fe, adoración y comunidad para la iglesia en Santa Tecla.
@@ -404,15 +468,14 @@
           <!-- 4. Contenido al frente (Texto a la izq, Botón a la der) -->
           <div class="tarjeta-cuerpo">
             <div class="tarjeta-info">
-              <span class="badge-evento">Iglesia Elim</span>
+              <span class="badge-evento">Iglesia Elim Jesucristo Te Ama</span>
               <h2 class="tarjeta-titulo">Quiénes Somos</h2>
               <p class="tarjeta-descripcion">
-                Somos la Iglesia Elim "Jesucristo Te Ama", una comunidad de
-                creyentes que se dedica a predicar el Evangelio del Señor
-                Jesucristo, a
+                Somos una comunidad de cristianos que se dedican a anunciar el
+                Evangelio del Señor Jesucristo, a
                 <strong>vivir conforme a la Palabra de Dios</strong> (la
                 Biblia), con fe y en santidad, con amor los unos a los otros y
-                en harmonía.
+                en armonía.
               </p>
             </div>
 
@@ -450,14 +513,15 @@
           <div class="tarjeta-cuerpo">
             <div class="tarjeta-info">
               <span class="badge-evento">El Evangelio</span>
-              <h2 class="tarjeta-titulo">Nuestra Visión</h2>
+              <h2 class="tarjeta-titulo">Nuestra Misión y Nuestra Visión</h2>
               <p class="tarjeta-descripcion">
-                Buscamos <strong>expandir el mensaje</strong> del Evangelio de
-                Jesucristo a cualquier persona que oiga de nosotros, de
-                cualquier edad, origen, religión, raza o nacionalidad. Por ello,
-                te invitamos a congregarte con nosotros, para que conozcas de
-                Dios si tienes interés por tu fe, y conozcas y creas
-                personalmente en el Señor Jesús.
+                Buscamos ser una iglesia que
+                <strong>anuncia el Evangelio de Jesucristo</strong>, con la
+                llenura del Espíritu Santo, a toda persona que oiga de nosotros,
+                de cualquier edad, origen y nación. Por ello, te invitamos a
+                congregarte con nosotros, para que conozcas de Dios si tienes
+                interés por tu fe, y conozcas y creas personalmente en el Señor
+                Jesús.
               </p>
             </div>
 
@@ -490,29 +554,19 @@
           <p>Doctrina bíblica</p>
         </div>
         <div class="card spotlight-card">
-          <h3>Miércoles</h3>
-          <p class="hora">El horario varía</p>
-          <p>Reuniones familiares</p>
-        </div>
-        <div class="card spotlight-card">
           <h3>Jueves</h3>
           <p class="hora">6:00 PM</p>
           <p>Estudio bíblico</p>
         </div>
         <div class="card spotlight-card">
-          <h3>Viernes</h3>
-          <p class="hora">El horario varía</p>
-          <p>Reuniones familiares</p>
-        </div>
-        <div class="card spotlight-card">
-          <h3>Sábado</h3>
-          <p class="hora">El horario varía</p>
+          <h3>Viernes y Sábado</h3>
+          <p class="hora">6:00 PM-8:00 PM</p>
           <p>Reuniones familiares</p>
         </div>
         <div class="card card-destacada">
           <h3>Domingo</h3>
           <p class="hora">9:30 AM</p>
-          <p>Prédica</p>
+          <p>Culto general</p>
         </div>
       </div>
     </section>
@@ -538,7 +592,7 @@
       <div class="social-links-row">
         <!-- Facebook -->
         <a
-          href="https://facebook.com/"
+          href="https://www.facebook.com/profile.php?id=100081862545821"
           target="_blank"
           rel="noopener noreferrer"
           class="social-btn btn-facebook"
@@ -614,7 +668,7 @@
         </div>
       </div>
       <p class="copy">
-        &copy; 2026 Iglesia Elim "Jesucristo Te Ama" &bull;
+        &copy; 2026 IEJTA &bull;
         <a
           href="privacy.html"
           style="color: #94a3b8; text-decoration: underline"
