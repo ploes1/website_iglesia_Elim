@@ -3,5 +3,6 @@
 * Que el buscador de la sección "Confesión de Fe" muestre el texto como el Ctrl + F en las secciones: Si hay un resultado que coincide más, desplegar la primera sección en orden numérico con ese resultado, luego desplegar las otras con ese resultado.
 * Añadir cajas más o menos transparentes al estilo "glass box" como en masvida.org.
 * Añadir actividades o eventos próximos en "Actividades".
-*Imágenes originales para varias secciones de diferentes páginas.
-* 
+* Imágenes originales para varias secciones de diferentes páginas.
+* Sección de referencias bíblicas para los paneles de "Más información". Ejemplo: Santa Cena → Base bíblica: Lucas 22:19 y 1 Corintios 11:26
+  
