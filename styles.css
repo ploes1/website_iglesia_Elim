@@ -1265,7 +1265,7 @@ a.button {
     background-color: #eab308;
   }
 
-  /* --- OPTIMIZACIÓN DE RENDIMIENTO EN MÓVILES --- */
+  /* --- OPTIMIZACIÓN DE RENDIMIENTO EN MÓVILES (ADAPTADA) --- */
   .aurora-blob {
     animation: none !important;
     filter: blur(35px) !important;
@@ -1276,13 +1276,27 @@ a.button {
     display: none !important;
   }
 
+  /* Modo Oscuro en móviles (Fondo oscuro sólido para rendimiento) */
   .card,
   .doctrina-item,
-  .card-banco,
-  .tarjeta-evento {
+  .card-banco {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
-    background-color: rgba(15, 23, 42, 0.92) !important;
+    background-color: rgba(15, 23, 42, 0.95) !important;
+  }
+
+  /* Modo Claro en móviles (Tarjetas blancas de porcelana impecables) */
+  [data-theme="light"] .card:not(.tarjeta-evento),
+  body.modo-claro .card:not(.tarjeta-evento),
+  [data-theme="light"] .doctrina-item,
+  body.modo-claro .doctrina-item,
+  [data-theme="light"] .card-banco,
+  body.modo-claro .card-banco {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background-color: #ffffff !important;
+    border: 1px solid rgba(214, 203, 184, 0.7) !important;
+    box-shadow: 0 4px 16px rgba(112, 90, 50, 0.08) !important;
   }
 }
 
