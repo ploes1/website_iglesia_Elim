@@ -167,6 +167,11 @@ const alabanzas = [
     url: "https://www.youtube.com/watch?v=mE7QISK7XXE",
   },
   {
+    titulo: "Yo Quiero Más De Ti",
+    artista: "Jaime Murrell",
+    url: "https://www.youtube.com/watch?v=XO2Jm986qXQ",
+  },
+  {
     titulo: "Dios está aquí",
     artista: "Javier Gacías Mateo",
     url: "https://www.youtube.com/watch?v=-1lEvbddHD8",
