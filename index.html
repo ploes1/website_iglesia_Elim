@@ -73,17 +73,81 @@
         />
         <h1 class="titulo shiny-text">Inicio</h1>
       </a>
-      <!-- 2. Botón Hamburguesa a la derecha (SIEMPRE AFUERA de header-brand) -->
-      <button
-        class="menu-hbtn"
-        id="btn-menu"
-        aria-label="Abrir menú"
-        aria-expanded="false"
-      >
-        <span class="hbtn-line"></span>
-        <span class="hbtn-line"></span>
-        <span class="hbtn-line"></span>
-      </button>
+      <!-- 2. Acciones a la derecha: Botón Celestial + Menú Hamburguesa -->
+      <div class="header-actions">
+        <!-- BOTÓN INTERACTIVO SOL / LUNA -->
+        <button
+          class="theme-toggle-btn"
+          id="theme-toggle"
+          aria-label="Cambiar entre modo día y noche"
+          title="Alternar Día / Noche"
+        >
+          <div class="celestial-orbit">
+            <!-- Icono Luna (Modo Oscuro) -->
+            <svg
+              class="icon-moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+            >
+              <path
+                d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                fill="currentColor"
+              />
+              <circle
+                cx="17"
+                cy="6"
+                r="1.5"
+                fill="#facc15"
+                class="star-sparkle star-1"
+              />
+              <circle
+                cx="19"
+                cy="10"
+                r="1"
+                fill="#facc15"
+                class="star-sparkle star-2"
+              />
+            </svg>
+            <!-- Icono Sol (Modo Claro) -->
+            <svg
+              class="icon-sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+            >
+              <circle cx="12" cy="12" r="5" fill="currentColor" />
+              <g
+                class="sun-rays"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              >
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+              </g>
+            </svg>
+          </div>
+        </button>
+
+        <!-- 3. Botón Hamburguesa a la derecha (SIEMPRE AFUERA de header-brand) -->
+        <button
+          class="menu-hbtn"
+          id="btn-menu"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <span class="hbtn-line"></span>
+          <span class="hbtn-line"></span>
+          <span class="hbtn-line"></span>
+        </button>
+      </div>
     </header>
 
     <!-- Overlay oscuro con desenfoque de fondo -->

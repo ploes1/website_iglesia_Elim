@@ -1,19 +1,19 @@
 :root {
-  /* Paleta Celestial & Modo Oscuro */
-  --bg-main: #0b1329;
+  /* Paleta Celestial & Modo Oscuro (Afinada para mayor armonía y elegancia) */
+  --bg-main: #0a0f1d;
   --bg-slate: #0f172a;
   --text-primary: #f8fafc;
   --text-muted: #94a3b8;
 
-  /* Acentos y Brillos */
-  --gold-accent: #facc15;
-  --gold-hover: #eab308;
-  --aurora-blue: #0ea5e9;
-  --aurora-indigo: #6366f1;
+  /* Acentos y Brillos (Tonos más sobrios y menos fluorescentes) */
+  --gold-accent: #eab308;
+  --gold-hover: #ca8a04;
+  --aurora-blue: #0284c7;
+  --aurora-indigo: #4f46e5;
 
   /* Contenedores y Bordes */
-  --card-bg: rgba(30, 41, 59, 0.7);
-  --border-glass: rgba(255, 255, 255, 0.15);
+  --card-bg: rgba(15, 23, 42, 0.7);
+  --border-glass: rgba(255, 255, 255, 0.12);
   --radius-pill: 50px;
 }
 html {
@@ -28,11 +28,425 @@ html {
 }
 
 body.cuerpo {
-  background-color: #0b1329;
+  background-color: #0a0f1d;
   color: #f8fafc;
   font-family: system-ui, sans-serif;
   text-align: center;
   padding: 0 0px 40px 0px;
+}
+/* ============================================================
+   PALETA DE FONDO CLARO (MODO ALABASTRO & LUZ MATUTINA)
+   ============================================================ */
+:root[data-theme="light"],
+body.modo-claro {
+  --bg-main: #fbfaf7;
+  --bg-slate: #f4efe6;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --gold-accent: #c28816;
+  --gold-hover: #9a6808;
+  --gold-text: #9a6808;
+  --card-bg: rgba(255, 255, 255, 0.94);
+  --border-glass: rgba(214, 203, 184, 0.6);
+}
+
+/* --- Adaptación cromática integral en Modo Claro --- */
+
+/* 1. Fondo general y cuerpo */
+body.modo-claro,
+[data-theme="light"] body.cuerpo {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+}
+
+/* 2. Aurora Celestial Diurna (Luz matutina de templo) */
+[data-theme="light"] .aurora-bg,
+body.modo-claro .aurora-bg {
+  background: linear-gradient(145deg, #fbfaf7 0%, #f5efe3 50%, #eae2d1 100%);
+}
+
+[data-theme="light"] .aurora-blob-1,
+body.modo-claro .aurora-blob-1 {
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.18) 0%,
+    rgba(251, 250, 247, 0) 70%
+  );
+}
+
+[data-theme="light"] .aurora-blob-2,
+body.modo-claro .aurora-blob-2 {
+  background: radial-gradient(
+    circle,
+    rgba(245, 158, 11, 0.16) 0%,
+    rgba(251, 250, 247, 0) 70%
+  );
+}
+
+[data-theme="light"] .aurora-blob-3,
+body.modo-claro .aurora-blob-3 {
+  background: radial-gradient(
+    circle,
+    rgba(168, 85, 247, 0.1) 0%,
+    rgba(251, 250, 247, 0) 70%
+  );
+}
+
+/* 3. Header y Drawer en Modo Claro */
+[data-theme="light"] .header,
+body.modo-claro .header {
+  background-color: rgba(251, 250, 247, 0.92);
+  border-bottom: 1px solid rgba(214, 203, 184, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] .titulo,
+body.modo-claro .titulo {
+  color: var(--gold-text);
+}
+
+[data-theme="light"] .menu-hbtn,
+body.modo-claro .menu-hbtn {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(214, 203, 184, 0.7);
+}
+
+[data-theme="light"] .menu-hbtn .hbtn-line,
+body.modo-claro .menu-hbtn .hbtn-line {
+  background-color: #1e293b;
+}
+
+[data-theme="light"] .menu-drawer,
+body.modo-claro .menu-drawer,
+[data-theme="light"] .drawer-nav,
+body.modo-claro .drawer-nav,
+[data-theme="light"] .drawer-footer,
+body.modo-claro .drawer-footer {
+  background: #fbfaf7 !important;
+  border-left-color: rgba(214, 203, 184, 0.5);
+}
+
+[data-theme="light"] .drawer-nav a,
+body.modo-claro .drawer-nav a {
+  color: #475569;
+}
+
+[data-theme="light"] .drawer-nav a:hover,
+body.modo-claro .drawer-nav a:hover {
+  background-color: rgba(194, 136, 22, 0.1);
+  color: var(--gold-text);
+}
+
+[data-theme="light"] .drawer-nav a.active,
+body.modo-claro .drawer-nav a.active {
+  background-color: rgba(194, 136, 22, 0.14);
+  color: var(--gold-text);
+  border-left-color: var(--gold-accent);
+}
+
+/* ============================================================
+   CORRECCIÓN DE TÍTULOS Y TEXTOS EN MODO CLARO
+   (Deja los buscadores totalmente intactos)
+   ============================================================ */
+
+/* 1. Títulos principales en todas las páginas (Inicio, Actividades, Servicios, etc.) */
+[data-theme="light"] .hero-titulo,
+body.modo-claro .hero-titulo,
+[data-theme="light"] .donaciones-titulo,
+body.modo-claro .donaciones-titulo,
+[data-theme="light"] .pagina-contenedor h1,
+body.modo-claro .pagina-contenedor h1,
+[data-theme="light"] .pagina-contenedor h2,
+body.modo-claro .pagina-contenedor h2 {
+  color: #0f172a !important; /* Pizarra oscuro nítido y legible */
+  text-shadow: none !important;
+}
+
+/* 2. Subtítulos y textos explicativos */
+[data-theme="light"] .hero-subtitulo,
+body.modo-claro .hero-subtitulo,
+[data-theme="light"] .donaciones-subtitulo,
+body.modo-claro .donaciones-subtitulo,
+[data-theme="light"] .texto-parrafo,
+body.modo-claro .texto-parrafo {
+  color: #475569 !important; /* Gris pizarra suave */
+}
+
+/* 3. Títulos de secciones */
+[data-theme="light"] .section-titulo,
+body.modo-claro .section-titulo {
+  color: #9a6808 !important; /* Dorado ámbar cálido */
+}
+
+/* 4. Doctrinas y Donaciones (Evita que el texto quede invisible) */
+[data-theme="light"] .card-banco-info h3,
+body.modo-claro .card-banco-info h3,
+[data-theme="light"] .doctrina-item summary,
+body.modo-claro .doctrina-item summary {
+  color: #9a6808 !important;
+}
+
+[data-theme="light"] .card-banco-info p,
+body.modo-claro .card-banco-info p,
+[data-theme="light"] .doctrina-contenido,
+body.modo-claro .doctrina-contenido {
+  color: #334155 !important;
+}
+
+/* 6. Tarjetas de Horarios y Actividades */
+[data-theme="light"] .card,
+body.modo-claro .card {
+  background: #ffffff;
+  border: 1px solid rgba(214, 203, 184, 0.6);
+  box-shadow:
+    0 8px 24px rgba(112, 90, 50, 0.06),
+    0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="light"] .card:hover,
+body.modo-claro .card:hover {
+  background: #ffffff;
+  border-color: var(--gold-accent);
+  box-shadow: 0 12px 30px rgba(194, 136, 22, 0.15);
+}
+
+[data-theme="light"] .card h3,
+body.modo-claro .card h3 {
+  color: #0f172a;
+}
+
+[data-theme="light"] .card p,
+body.modo-claro .card p {
+  color: #475569;
+}
+
+[data-theme="light"] .hora,
+body.modo-claro .hora {
+  color: var(--gold-text);
+}
+
+/* Tarjeta destacada (Domingo) */
+[data-theme="light"] .card.card-destacada,
+body.modo-claro .card.card-destacada {
+  background: linear-gradient(180deg, #fffcf4 0%, #fff6e0 100%);
+  border: 1.5px solid rgba(194, 136, 22, 0.55);
+  box-shadow: 0 8px 28px rgba(194, 136, 22, 0.16);
+}
+
+[data-theme="light"] .section-titulo,
+body.modo-claro .section-titulo {
+  color: var(--gold-text);
+}
+
+[data-theme="light"] .direccion,
+body.modo-claro .direccion {
+  color: #475569;
+}
+
+/* 7. Pie de página (Footer) y Redes Sociales en Modo Claro */
+[data-theme="light"] .footer,
+body.modo-claro .footer {
+  border-top: 1px solid rgba(214, 203, 184, 0.6);
+  color: #475569;
+}
+
+[data-theme="light"] .social-btn,
+body.modo-claro .social-btn {
+  background: #ffffff !important;
+  border: 1px solid rgba(214, 203, 184, 0.7) !important;
+  color: #334155 !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-theme="light"] .social-btn:hover,
+body.modo-claro .social-btn:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12) !important;
+}
+
+[data-theme="light"] .copy,
+body.modo-claro .copy,
+[data-theme="light"] .copy a,
+body.modo-claro .copy a {
+  color: #64748b !important;
+}
+/* ============================================================
+   PROTECCIÓN DE TARJETAS DE EVENTOS / FOTOS EN MODO CLARO
+   (Garantiza que el texto sobre fotos siempre sea nítido y legible)
+   ============================================================ */
+
+/* 1. Marco y sombra de la tarjeta sobre el fondo claro */
+[data-theme="light"] .tarjeta-evento,
+body.modo-claro .tarjeta-evento {
+  border: 1.5px solid rgba(214, 203, 184, 0.6) !important;
+  box-shadow:
+    0 16px 35px rgba(112, 90, 50, 0.14),
+    0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* 2. El título de la tarjeta de foto (SIEMPRE blanco brillante y con sombra protectora) */
+[data-theme="light"] .tarjeta-evento .tarjeta-titulo,
+body.modo-claro .tarjeta-evento .tarjeta-titulo {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* 3. La descripción y texto en negrita sobre la foto */
+[data-theme="light"] .tarjeta-evento .tarjeta-descripcion,
+body.modo-claro .tarjeta-evento .tarjeta-descripcion {
+  color: #f1f5f9 !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6) !important;
+}
+
+[data-theme="light"] .tarjeta-evento .tarjeta-descripcion strong,
+body.modo-claro .tarjeta-evento .tarjeta-descripcion strong {
+  color: #ffffff !important;
+}
+
+/* 4. Botón "Más información" dentro de la tarjeta */
+[data-theme="light"] .tarjeta-evento .btn-tarjeta,
+body.modo-claro .tarjeta-evento .btn-tarjeta {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
+}
+
+[data-theme="light"] .tarjeta-evento .btn-tarjeta:hover,
+body.modo-claro .tarjeta-evento .btn-tarjeta:hover {
+  background-color: #facc15 !important;
+  color: #0f172a !important;
+}
+/* ============================================================
+   ADAPTACIÓN CROMÁTICA: CONFESIÓN DE FE Y DONACIONES
+   (Elimina los bloques negros y cajas oscuras en Modo Claro)
+   ============================================================ */
+
+/* 1. CAJAS DE VERSÍCULOS BÍBLICOS (En Confesión de Fe y Donaciones) */
+/* Pasan de ser bloques negros a elegante papel pergamino cálido */
+[data-theme="light"] .versiculo-box,
+body.modo-claro .versiculo-box {
+  background: #f5efe3 !important;
+  border: 1px solid rgba(214, 203, 184, 0.5) !important;
+  border-left: 4px solid #c28816 !important;
+  color: #1e293b !important;
+  box-shadow: 0 4px 15px rgba(112, 90, 50, 0.05) !important;
+}
+
+[data-theme="light"] .versiculo-box div,
+body.modo-claro .versiculo-box div {
+  color: #9a6808 !important;
+}
+
+/* 2. ACORDEONES DE DOCTRINAS Y PREGUNTAS FRECUENTES (<details>) */
+[data-theme="light"] .doctrina-item,
+body.modo-claro .doctrina-item {
+  background: #ffffff !important;
+  border: 1px solid rgba(214, 203, 184, 0.6) !important;
+  box-shadow: 0 4px 18px rgba(112, 90, 50, 0.06) !important;
+}
+
+/* Título plegable de cada doctrina */
+[data-theme="light"] .doctrina-item summary,
+body.modo-claro .doctrina-item summary {
+  color: #9a6808 !important; /* Oro noble legible */
+  background: transparent !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="light"] .doctrina-item summary:hover,
+body.modo-claro .doctrina-item summary:hover {
+  background-color: rgba(194, 136, 22, 0.06) !important;
+}
+
+/* Contenido interno desplegado */
+[data-theme="light"] .doctrina-contenido,
+body.modo-claro .doctrina-contenido {
+  background: #ffffff !important;
+  border-top: 1px solid rgba(214, 203, 184, 0.4) !important;
+  color: #334155 !important; /* Texto de lectura oscuro */
+}
+
+[data-theme="light"] .doctrina-contenido h3,
+body.modo-claro .doctrina-contenido h3 {
+  color: #9a6808 !important; /* Subtítulos como "Evidencias Internas" */
+}
+
+[data-theme="light"] .doctrina-contenido ul,
+body.modo-claro .doctrina-contenido ul,
+[data-theme="light"] .doctrina-contenido ol,
+body.modo-claro .doctrina-contenido ol,
+[data-theme="light"] .doctrina-contenido li,
+body.modo-claro .doctrina-contenido li {
+  color: #334155 !important;
+}
+
+/* 3. SECCIÓN DE DONACIONES (Pestañas, Bancos y Preguntas Frecuentes) */
+
+/* Título de "Preguntas Frecuentes" en Donaciones */
+[data-theme="light"] .donaciones-container h3,
+body.modo-claro .donaciones-container h3 {
+  color: #0f172a !important; /* Reemplaza el amarillo chillón por pizarra */
+}
+
+/* Barra de pestañas (Transferencias / Tarjetas / En Persona) */
+[data-theme="light"] .tabs-metodos,
+body.modo-claro .tabs-metodos {
+  background: rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid rgba(214, 203, 184, 0.6) !important;
+}
+
+[data-theme="light"] .tab-btn,
+body.modo-claro .tab-btn {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .tab-btn.activo,
+body.modo-claro .tab-btn.activo {
+  background: #ffffff !important; /* Pestaña activa en blanco destacado */
+  color: #0f172a !important;
+  border: 1px solid rgba(194, 136, 22, 0.4) !important;
+  box-shadow: 0 4px 14px rgba(112, 90, 50, 0.1) !important;
+}
+
+/* Tarjetas bancarias en Modo Claro */
+[data-theme="light"] .card-banco,
+body.modo-claro .card-banco {
+  background: #ffffff !important;
+  border: 1px solid rgba(214, 203, 184, 0.6) !important;
+  box-shadow: 0 6px 20px rgba(112, 90, 50, 0.07) !important;
+}
+
+[data-theme="light"] .card-banco-info h3,
+body.modo-claro .card-banco-info h3,
+[data-theme="light"] .card-banco-full h3,
+body.modo-claro .card-banco-full h3 {
+  color: #9a6808 !important;
+}
+
+[data-theme="light"] .card-banco-info p,
+body.modo-claro .card-banco-info p,
+[data-theme="light"] .card-banco-full p,
+body.modo-claro .card-banco-full p {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .numero-cuenta,
+body.modo-claro .numero-cuenta {
+  color: #c28816 !important;
+}
+
+/* Botón "Copiar Cuenta" */
+[data-theme="light"] .btn-copiar,
+body.modo-claro .btn-copiar {
+  background: #f5efe3 !important;
+  border: 1px solid rgba(214, 203, 184, 0.8) !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .btn-copiar:hover,
+body.modo-claro .btn-copiar:hover {
+  background: #c28816 !important;
+  color: #ffffff !important;
 }
 
 /* ============================================================
@@ -1061,12 +1475,11 @@ a.button {
 }
 
 .versiculo-box {
-  background: rgb(0, 0, 0);
-  border-left: 4px solid #facc15;
-  padding: 14px 18px;
-  margin: 12px 0;
-  font-style: italic;
-  border-radius: 0 8px 8px 0;
+  background: rgba(15, 23, 42, 0.85) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-left: 4px solid var(--gold-accent) !important;
+  color: #f1f5f9 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
 }
 
 .espacio-arriba {
@@ -1667,7 +2080,7 @@ a.button {
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
-  background: linear-gradient(135deg, #0b1329 0%, #0f172a 50%, #1e1b4b 100%);
+  background: linear-gradient(135deg, #0a0f1d 0%, #0f172a 50%, #1e293b 100%);
   contain: strict; /* Le indica al navegador que no afecte el layout principal */
 }
 
@@ -1682,29 +2095,20 @@ a.button {
 }
 
 .aurora-blob-1 {
-  top: -10%;
-  left: -10%;
-  width: 65vw;
-  height: 65vh;
+  /* Usa el azul ajustado: */
   background: radial-gradient(
     circle,
-    rgba(14, 165, 233, 0.45) 0%,
+    rgba(2, 132, 199, 0.35) 0%,
     rgba(15, 23, 42, 0) 70%
   );
 }
-
 .aurora-blob-2 {
-  bottom: -10%;
-  right: -10%;
-  width: 70vw;
-  height: 70vh;
+  /* Usa el índigo ajustado: */
   background: radial-gradient(
     circle,
-    rgba(99, 102, 241, 0.4) 0%,
+    rgba(79, 70, 229, 0.3) 0%,
     rgba(15, 23, 42, 0) 70%
   );
-  animation-delay: -6s;
-  animation-duration: 22s;
 }
 
 .aurora-blob-3 {
@@ -2005,4 +2409,146 @@ a.button {
   margin: 20px 0;
   font-size: 0.95rem;
   color: #e2e8f0;
+}
+
+/* ============================================================
+   BOTÓN DIVERTIDO: ÓRBITA CELESTIAL (THEME TOGGLE)
+   ============================================================ */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.theme-toggle-btn {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition:
+    transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.08) translateY(-1px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #facc15;
+  box-shadow: 0 0 16px rgba(250, 204, 21, 0.35);
+}
+
+.theme-toggle-btn:active {
+  transform: scale(0.92);
+}
+
+.celestial-orbit {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Efecto de giro elástico al cambiar de tema */
+.theme-toggle-btn.girando .celestial-orbit {
+  transform: rotate(360deg) scale(1.15);
+}
+
+/* Iconos de Luna y Sol */
+.icon-moon,
+.icon-sun {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  transition:
+    opacity 0.35s ease,
+    transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Estado Oscuro por defecto: Luna visible, Sol oculto */
+.icon-moon {
+  color: #facc15;
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.icon-sun {
+  color: #f59e0b;
+  opacity: 0;
+  transform: scale(0.2) rotate(-90deg);
+}
+
+/* Estrellitas titilantes dentro de la luna */
+.star-sparkle {
+  animation: sparkle 2.2s infinite alternate ease-in-out;
+}
+.star-2 {
+  animation-delay: 1.1s;
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+/* --- ESTADO MODO CLARO (Activado) --- */
+[data-theme="light"] .theme-toggle-btn,
+body.modo-claro .theme-toggle-btn {
+  background: rgba(15, 23, 42, 0.06);
+  border-color: rgba(15, 23, 42, 0.15);
+}
+
+[data-theme="light"] .theme-toggle-btn:hover,
+body.modo-claro .theme-toggle-btn:hover {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: #f59e0b;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.4);
+}
+
+[data-theme="light"] .icon-moon,
+body.modo-claro .icon-moon {
+  opacity: 0;
+  transform: scale(0.2) rotate(90deg);
+}
+
+[data-theme="light"] .icon-sun,
+body.modo-claro .icon-sun {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+/* Rayos del sol con rotación suave */
+[data-theme="light"] .sun-rays,
+body.modo-claro .sun-rays {
+  transform-origin: center;
+  animation: sunSpin 14s linear infinite;
+}
+
+@keyframes sunSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

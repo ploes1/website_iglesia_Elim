@@ -581,3 +581,41 @@ document.addEventListener("DOMContentLoaded", function () {
       banner.remove();
     });
 });
+// ============================================================
+// CONTROLADOR DEL MODO CLARO / OSCURO (Órbita Celestial)
+// ============================================================
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("theme-toggle");
+  const STORAGE_KEY = "elim_tema_preferido";
+
+  // 1. Cargar preferencia guardada o respetar la del sistema
+  const temaGuardado = localStorage.getItem(STORAGE_KEY);
+  if (temaGuardado === "light") {
+    document.documentElement.setAttribute("data-theme", "light");
+    document.body.classList.add("modo-claro");
+  }
+
+  if (!toggleBtn) return;
+
+  // 2. Evento de clic con animación elástica
+  toggleBtn.addEventListener("click", () => {
+    // Añadir clase temporal de giro divertido
+    toggleBtn.classList.add("girando");
+    setTimeout(() => toggleBtn.classList.remove("girando"), 600);
+
+    const esClaro =
+      document.documentElement.getAttribute("data-theme") === "light";
+
+    if (esClaro) {
+      // Cambiar a Modo Oscuro
+      document.documentElement.removeAttribute("data-theme");
+      document.body.classList.remove("modo-claro");
+      localStorage.setItem(STORAGE_KEY, "dark");
+    } else {
+      // Cambiar a Modo Claro
+      document.documentElement.setAttribute("data-theme", "light");
+      document.body.classList.add("modo-claro");
+      localStorage.setItem(STORAGE_KEY, "light");
+    }
+  });
+});
